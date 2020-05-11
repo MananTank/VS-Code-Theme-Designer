@@ -104,7 +104,6 @@ sliderInputs.forEach(s => {
 
 // HSL SLIDERS
 // WHEN CHANGED, update color
-
 hueInput.addEventListener('input', e => {
 	hue = e.target.value;
 	updateColor();

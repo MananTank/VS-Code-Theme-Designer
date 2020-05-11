@@ -69,6 +69,7 @@ body {
   outline: none;
 }
 .theme-designer .selection input[type='text'] {
+  box-sizing: border-box;
   width: 100%;
   font-size: 3em;
   padding: 0.2em 0.5em;
@@ -194,6 +195,11 @@ body {
   grid-template-rows: auto auto auto 1fr 10px;
   grid-template-areas: 'title title title title' 'activity side tabs tabs' 'activity side lines editor' 'activity side terminal terminal' 'status status status status';
 }
+@media (max-width: 1200px) {
+  .vscode {
+    height: 350px;
+  }
+}
 .vscode .activity-bar {
   grid-area: activity;
   background: var(--c1);
@@ -217,14 +223,106 @@ body {
   grid-area: editor;
   background: var(--c9);
   font-family: 'Fira Code', monospace;
+  padding: 5px;
+}
+.vscode .editor .line {
+  display: flex;
+  font-size: 12px;
+  padding: 0.2em 0;
+}
+@media (max-width: 1200px) {
+  .vscode .editor .line {
+    font-size: 9px;
+  }
+}
+.vscode .c1 {
+  color: var(--c1);
+}
+.vscode .c2 {
+  color: var(--c2);
+}
+.vscode .c3 {
+  color: var(--c3);
+}
+.vscode .c4 {
+  color: var(--c4);
+}
+.vscode .c5 {
+  color: var(--c5);
+}
+.vscode .c6 {
+  color: var(--c6);
+}
+.vscode .c7 {
+  color: var(--c7);
+}
+.vscode .c8 {
+  color: var(--c8);
+}
+.vscode .c9 {
+  color: var(--c9);
+}
+.vscode .c10 {
+  color: var(--c10);
+}
+.vscode .c11 {
+  color: var(--c11);
+}
+.vscode .c12 {
+  color: var(--c12);
+}
+.vscode .c13 {
+  color: var(--c13);
+}
+.vscode .c14 {
+  color: var(--c14);
+}
+.vscode .c15 {
+  color: var(--c15);
+}
+.vscode .c16 {
+  color: var(--c16);
+}
+.vscode .c17 {
+  color: var(--c17);
+}
+.vscode .c18 {
+  color: var(--c18);
+}
+.vscode .c19 {
+  color: var(--c19);
+}
+.vscode .c20 {
+  color: var(--c20);
+}
+.vscode .c21 {
+  color: var(--c21);
+}
+.vscode .comment {
+  color: var(--comment);
+}
+.vscode .currentLine {
+  color: var(--currentLine);
+}
+.vscode .selected {
+  color: var(--selected);
 }
 .vscode .lines {
   grid-area: lines;
   background: var(--c1);
   font-family: 'Fira Code', monospace;
   font-size: 12px;
-  padding: 0.5em 1em;
+  padding: 5px 10px;
   text-align: right;
+}
+.vscode .lines .line {
+  font-size: 12px;
+  padding: 0.2em 0;
+}
+@media (max-width: 1200px) {
+  .vscode .lines .line {
+    font-size: 9px;
+  }
 }
 .vscode .side-bar {
   grid-area: side;
@@ -320,84 +418,4 @@ body {
 }
 .vscode .title-bar .options .option {
   margin-left: 1em;
-}
-.editor {
-  padding: 0.5em 1em;
-}
-.line {
-  display: flex;
-  font-size: 12px;
-  padding: 0.2em 0;
-}
-.c1 {
-  color: var(--c1);
-}
-.c2 {
-  color: var(--c2);
-}
-.c3 {
-  color: var(--c3);
-}
-.c4 {
-  color: var(--c4);
-}
-.c5 {
-  color: var(--c5);
-}
-.c6 {
-  color: var(--c6);
-}
-.c7 {
-  color: var(--c7);
-}
-.c8 {
-  color: var(--c8);
-}
-.c9 {
-  color: var(--c9);
-}
-.c10 {
-  color: var(--c10);
-}
-.c11 {
-  color: var(--c11);
-}
-.c12 {
-  color: var(--c12);
-}
-.c13 {
-  color: var(--c13);
-}
-.c14 {
-  color: var(--c14);
-}
-.c15 {
-  color: var(--c15);
-}
-.c16 {
-  color: var(--c16);
-}
-.c17 {
-  color: var(--c17);
-}
-.c18 {
-  color: var(--c18);
-}
-.c19 {
-  color: var(--c19);
-}
-.c20 {
-  color: var(--c20);
-}
-.c21 {
-  color: var(--c21);
-}
-.comment {
-  color: var(--comment);
-}
-.currentLine {
-  color: var(--currentLine);
-}
-.selected {
-  color: var(--selected);
 }

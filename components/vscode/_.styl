@@ -10,6 +10,8 @@ r5 = 'status status status status'
   overflow hidden
   color var(--c8)
   height 450px
+  +on-sm()
+    height 350px
   display grid
   grid-template-columns auto 20% 40px 1fr
   grid-template-rows auto auto auto 1fr 10px
@@ -25,22 +27,3 @@ r5 = 'status status status status'
   @import 'title-bar/_'
 
 
-.editor
-  padding 0.5em 1em
-
-.line
-  display flex
-  font-size 12px
-  padding: 0.2em 0;
-
-
-for i in 1..21
-  .c{i}
-    color var('--c%s' % i)
-
-.comment
-  color var(--comment)
-.currentLine
-  color var( --currentLine)
-.selected
-  color var(--selected)

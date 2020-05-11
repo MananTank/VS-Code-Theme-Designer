@@ -2,3 +2,23 @@
   grid-area editor
   background var(--c9)
   font-family: 'Fira Code', monospace;
+  padding  5px
+
+  .line
+    display flex
+    font-size 12px
+    +on-sm()
+      font-size 9px
+    padding: 0.2em 0;
+
+
+for i in 1..21
+  .c{i}
+    color var('--c%s' % i)
+
+.comment
+  color var(--comment)
+.currentLine
+  color var( --currentLine)
+.selected
+  color var(--selected)
