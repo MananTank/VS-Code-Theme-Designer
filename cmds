@@ -1,0 +1,5 @@
+// run stylus
+stylus -w index.styl -o style.css
+
+// run pug
+pug -w index.pug -o ./ -P

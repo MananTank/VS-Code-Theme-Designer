@@ -8,6 +8,20 @@
    --font black
    --border white
 
+   input[type='text']
+      width 100%
+      font-size 3em
+      padding 0.2em 0.5em
+      font-family 'Fira Code', monospace
+      border 2px solid var(--border)
+      transition border 400ms ease
+      text-transform uppercase
+      background var(--color)
+      color var(--font)
+      border-radius 8px
+      &:active, &:focus
+         outline none
+
    .title
       margin-top 30px
       margin-bottom 20px
@@ -32,22 +46,8 @@
          border 2px solid var(--border)
 
 
-   input[type='text']
-      width 100%
-      font-size 3em
-      padding 0.2em 0.5em
-      font-family 'Fira Code', monospace
-      border 2px solid var(--border)
-      transition border 400ms ease
-      text-transform uppercase
-      background var(--color)
-      color var(--font)
-      border-radius 8px
-      &:active, &:focus
-         outline none
 
-
-
+// HSL sliders ----------------
 .slider
    position relative
    margin 0.5em 0
@@ -61,6 +61,8 @@
       top 50%
       transform translateY(-50%)
       border-radius 4px
+
+
    input
       width 100%
       opacity 0
@@ -80,17 +82,14 @@
       pointer-events none
       transition left 500ms ease, transform 200ms ease
 
+   &.hue::before
+         background: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))
+
+   &.saturation::before
+      background linear-gradient(to right, unquote('hsl(var(--h), 0%, 50%)'), unquote('hsl(var(--h), 100%, 50%)'))
+
+   &.lightness::before
+      background: linear-gradient(to right, unquote('hsl(var(--h), 100%, 0%)'), unquote('hsl(var(--h), 100%, 50%)'), unquote('hsl(var(--h), 100%, 100%)'))
 
 
-
-
-
-.hue.slider::before
-   background: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))
-
-.saturation.slider::before
-   background linear-gradient(to right, unquote('hsl(var(--h), 0%, 50%)'), unquote('hsl(var(--h), 100%, 50%)'))
-
-.lightness.slider::before
-   background: linear-gradient(to right, unquote('hsl(var(--h), 100%, 0%)'), unquote('hsl(var(--h), 100%, 50%)'), unquote('hsl(var(--h), 100%, 100%)'))
 
