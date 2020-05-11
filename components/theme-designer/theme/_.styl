@@ -1,0 +1,32 @@
+.theme
+   .section:not(:last-of-type)
+      margin-bottom 40px
+   .title
+      font-size 2em
+      letter-spacing: 0.1em
+      margin-bottom 1em
+      text-transform: uppercase
+
+
+
+.pallete
+   display grid
+   grid-template-columns repeat(auto-fit, 3em)
+   grid-auto-rows: 3em
+   grid-gap 2em
+
+   .color
+      --color black
+      display grid
+      grid-template-rows auto 1fr
+      cursor pointer
+      transition 100ms ease
+      position relative
+      background var(--color)
+      transition all 100ms ease
+      border-radius 4px
+      &.active
+         transform: scale(1.4)
+         border 2px solid black !important
+
+

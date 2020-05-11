@@ -1,0 +1,46 @@
+r1 = 'title title title title'
+r2 = 'activity side tabs tabs'
+r3 = 'activity side lines editor'
+r4 = 'activity side terminal terminal'
+r5 = 'status status status status'
+
+.vscode
+  width 100%
+  border-radius 8px
+  overflow hidden
+  color var(--c8)
+  height 450px
+  display grid
+  grid-template-columns auto 20% 40px 1fr
+  grid-template-rows auto auto auto 1fr 10px
+  grid-template-areas r1 r2 r3 r4 r5
+
+  @import 'activity-bar/_'
+  @import 'editor/_'
+  @import 'lines/_'
+  @import 'side-bar/_'
+  @import 'status-bar/_'
+  @import 'tabs/_'
+  @import 'terminal/_'
+  @import 'title-bar/_'
+
+
+.editor
+  padding 0.5em 1em
+
+.line
+  display flex
+  font-size 12px
+  padding: 0.2em 0;
+
+
+for i in 1..21
+  .c{i}
+    color var('--c%s' % i)
+
+.comment
+  color var(--comment)
+.currentLine
+  color var( --currentLine)
+.selected
+  color var(--selected)

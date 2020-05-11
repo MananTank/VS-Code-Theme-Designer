@@ -1,0 +1,15 @@
+.tabs
+  grid-area tabs
+  display flex
+  .tab
+    padding 0.7em 1.5em
+    border-right 1px solid var(--c10)
+    border-bottom 1px solid var(--c10)
+    background var(--c9)
+    &:last-of-type
+      flex 1
+      border-right none
+    &.active
+      background var(--c1)
+      color var(--c3)
+      border-bottom 1px solid var(--c4)

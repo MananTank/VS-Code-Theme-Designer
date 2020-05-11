@@ -1,0 +1,12 @@
+.theme-designer
+   width 100%
+   display grid
+   grid-template-columns 1fr
+   grid-gap 50px
+   +on-sm()
+      grid-template-columns 1fr 1fr
+      grid-gap 30px
+   font-family 'Fira Code', monospace
+
+   @import './selection/_'
+   @import './theme/_'
