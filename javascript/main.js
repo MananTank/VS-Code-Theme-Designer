@@ -13,6 +13,12 @@ let lightness = 100;
 const selection = document.querySelector('.selection');
 const selectionInfo = document.querySelector('.selection .info');
 const selectionInputText = document.querySelector('.selection input[type="text"]');
+// hsl sliders
+const lightInput = document.querySelector('.lightness input');
+const hueInput = document.querySelector('.hue input');
+const satInput = document.querySelector('.saturation input');
+// all hsl slider inputs
+const sliderInputs = document.querySelectorAll('.slider input');
 
 function darker(x) {
 	return `hsl(${hue}deg, ${saturation}%, ${Number(lightness) - x}%)`;
@@ -82,8 +88,6 @@ function updateBubble(s) {
 	bubble.style.left = ((s.value - s.min) * 100) / (s.max - s.min) + '%';
 }
 
-// update bubble position when hsl slider is changed
-const sliderInputs = document.querySelectorAll('.slider input');
 sliderInputs.forEach(s => {
 	s.addEventListener('input', e => {
 		updateBubble(s);
@@ -100,31 +104,24 @@ sliderInputs.forEach(s => {
 
 // HSL SLIDERS
 // WHEN CHANGED, update color
-const hueInput = document.querySelector('.hue input');
+
 hueInput.addEventListener('input', e => {
 	hue = e.target.value;
 	updateColor();
 	updateText();
 });
 
-const satInput = document.querySelector('.saturation input');
 satInput.addEventListener('input', e => {
 	saturation = e.target.value;
 	updateColor();
 	updateText();
 });
 
-const lightInput = document.querySelector('.lightness input');
 lightInput.addEventListener('input', e => {
 	lightness = e.target.value;
 	updateColor();
 	updateText();
 });
-
-// MAKE PALLETE ---------------------------------
-makePallete(scopes, '.scopes');
-makePallete(layout, '.layout');
-makePallete(others, '.others');
 
 function setHSLFromHex(hex) {
 	const [h, s, l] = hexToHSL(hex);
@@ -182,11 +179,6 @@ function makePallete(colors, targetPallete) {
 	}
 }
 
-// RUN -----------------------
-makePallete();
-makeTheme();
-document.querySelector('.copy').addEventListener('click', copyToClipboard);
-
 function setDefaultSelected() {
 	selectedColor = document.querySelector('.color');
 	selectedColor.classList.add('active');
@@ -198,4 +190,11 @@ function setDefaultSelected() {
 	selectionInfo.innerHTML = getInfos(layout['c10'].info);
 }
 
+// RUN -----------------------
+makePallete();
+makeTheme();
+makePallete(scopes, '.scopes');
+makePallete(layout, '.layout');
+makePallete(others, '.others');
 setDefaultSelected();
+document.querySelector('.copy').addEventListener('click', copyToClipboard);
