@@ -47,7 +47,7 @@ export const scopes = {
 	},
 	c4: {
 		hex: '#ffc600',
-		info: ['() =>', 'function names', 'badges', 'cursor', 'const', 'let', 'mixins', 'various borders'],
+		info: ['=>', 'function names', 'badges', 'cursor', 'const', 'let', 'mixins', 'various borders'],
 	},
 
 	c7: {
@@ -60,7 +60,7 @@ export const scopes = {
 	},
 	c15: {
 		hex: '#3ad900',
-		info: ['git untracked U', 'class names', 'var( )', 'pseudo classes', 'pseudo elements'],
+		info: ['git untracked U', 'template strings', 'class names', 'var( )', 'pseudo classes', 'pseudo elements'],
 	},
 	c16: {
 		hex: '#fb94ff',
@@ -76,7 +76,7 @@ export const scopes = {
 	},
 	c21: {
 		hex: '#a5ff90',
-		info: ['strings', 'css properties'],
+		info: ['strings', 'css properties', '()'],
 	},
 };
 
@@ -365,7 +365,7 @@ export default function makeTheme() {
       "walkThrough.embeddedEditorBackground": "${layout.c2.hex}",
       "welcomePage.buttonBackground": "${layout.c9.hex}",
       "welcomePage.buttonHoverBackground": "${layout.c2.hex}",
-      "widget.shadow": "${fixed.c5}00026"
+      "widget.shadow": "${fixed.c5}26"
     },
     "tokenColors": [
       {
@@ -607,7 +607,7 @@ export default function makeTheme() {
         "scope":
           "punctuation.definition.string.begin, punctuation.definition.string.end",
         "settings": {
-          "foreground": "#92fc79"
+          "foreground": "${scopes.c21.hex}"
         }
       },
       {
@@ -873,6 +873,21 @@ export default function makeTheme() {
           "foreground": "${scopes.c18.hex}"
         }
       },
+      {
+        "name": "[JAVASCRIPT] - Variable other Properties",
+        "scope" : "variable.other.property.js",
+        "settings": {
+          "foreground": "${scopes.c4.hex}"
+        }
+      },
+      {
+        "name": "[JAVASCRIPT] - JS objects",
+        "scope" : "variable.other.object.js",
+        "settings": {
+          "foreground": "${scopes.c4.hex}"
+        }
+      },
+
       {
         "name": "[PHP] - Variables",
         "scope": "variable.other.php",
