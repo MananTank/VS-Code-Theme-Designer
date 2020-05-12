@@ -17,7 +17,7 @@
       border 2px solid var(--border)
       transition border 400ms ease
       text-transform uppercase
-      background var(--color)
+      background-color var(--color)
       color var(--font)
       border-radius 8px
       &:active, &:focus
@@ -38,13 +38,14 @@
       flex-wrap wrap
 
       p
-         background var(--color)
+         background-color var(--color)
          color var(--font)
          display inline-block
          border-radius 6px
          padding 0.5em 1em
          margin 0.2em
          border 2px solid var(--border)
+         cursor pointer
 
 
 
@@ -74,7 +75,7 @@
    .bubble
       width 1.5em
       height 1.5em
-      background white
+      background-color white
       position absolute
       border-radius 50%
       left 50%
@@ -84,13 +85,13 @@
       transition left 500ms ease, transform 200ms ease
 
    &.hue::before
-         background: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))
+         background-image: linear-gradient(to right,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%))
 
    &.saturation::before
-      background linear-gradient(to right, unquote('hsl(var(--h), 0%, 50%)'), unquote('hsl(var(--h), 100%, 50%)'))
+      background-image linear-gradient(to right, unquote('hsl(var(--h), 0%, 50%)'), unquote('hsl(var(--h), 100%, 50%)'))
 
    &.lightness::before
-      background: linear-gradient(to right, unquote('hsl(var(--h), 100%, 0%)'), unquote('hsl(var(--h), 100%, 50%)'), unquote('hsl(var(--h), 100%, 100%)'))
+      background-image: linear-gradient(to right, unquote('hsl(var(--h), 100%, 0%)'), unquote('hsl(var(--h), 100%, 50%)'), unquote('hsl(var(--h), 100%, 100%)'))
 
 
 

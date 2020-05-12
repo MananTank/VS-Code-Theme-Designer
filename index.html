@@ -6,7 +6,7 @@
     <script src="./javascript/tabs.js" defer="defer"></script>
     <div class="container">
       <div class="vscode">
-        <div class="title-bar">
+        <div class="title-bar target-title-bar">
           <div class="title">Project X - VSCODE</div>
           <div class="options">
                     <svg class="vscode-icon option" viewBox="0 0 256 256">
@@ -24,20 +24,20 @@
                       </g>
                       <defs>
                         <filter id="filter0_d" x="-21.4896" y="40.5225" width="298.822" height="236.149" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"></filter>
-                        <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                        <feflood flood-opacity="0" result="background-colorImageFix"></feflood>
                         <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></fecolormatrix>
                         <feoffset></feoffset>
                         <fegaussianblur stdDeviation="10.6667"></fegaussianblur>
                         <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></fecolormatrix>
-                        <feblend mode="overlay" in2="BackgroundImageFix" result="effect1_dropShadow"></feblend>
+                        <feblend mode="overlay" in2="background-colorImageFix" result="effect1_dropShadow"></feblend>
                         <feblend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feblend>
                         <filter id="filter1_d" x="154.667" y="-20.6735" width="122.667" height="297.347" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"></filter>
-                        <feflood flood-opacity="0" result="BackgroundImageFix"></feflood>
+                        <feflood flood-opacity="0" result="background-colorImageFix"></feflood>
                         <fecolormatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></fecolormatrix>
                         <feoffset></feoffset>
                         <fegaussianblur stdDeviation="10.6667"></fegaussianblur>
                         <fecolormatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></fecolormatrix>
-                        <feblend mode="overlay" in2="BackgroundImageFix" result="effect1_dropShadow"></feblend>
+                        <feblend mode="overlay" in2="background-colorImageFix" result="effect1_dropShadow"></feblend>
                         <feblend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feblend>
                         <lineargradient id="paint0_linear" x1="127.844" y1="0.659988" x2="127.844" y2="255.34" gradientUnits="userSpaceOnUse"></lineargradient>
                         <stop stop-color="white"></stop>
@@ -54,7 +54,7 @@
             <div class="option">Help</div>
           </div>
         </div>
-        <div class="activity-bar">
+        <div class="activity-bar target-activity-bar">
                   <svg class="active" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="m8.5 0h9l4.5 4.5v12.1l-1.3 1.4h-4.7v4.6l-1.4 1.4h-12.1l-1.5-1.4v-15.1l1.5-1.5h4.5v-4.5zm7.5 1.5v4.5h4.5v10.5h-12v-15zm3.9 3-2.4-2.4v2.4zm-12.9 3v9.1l1.5 1.4h6v4.5h-12v-15z"></path>
                   </svg>
@@ -73,24 +73,24 @@
         </div>
         <div class="tabs">
           <div class="tab active">JavaScript</div>
-          <div class="tab">HTML</div>
-          <div class="tab">CSS</div>
-          <div class="tab"></div>
+          <div class="tab target-inactive-tabs">HTML</div>
+          <div class="tab target-inactive-tabs">CSS</div>
+          <div class="tab target-inactive-tabs"></div>
         </div>
-        <div class="side-bar">
+        <div class="side-bar target-side-bar">
           <div class="title">Explorer</div>
-          <div class="group">open editors</div>
+          <div class="group target-side-bar-group">open editors</div>
           <div class="content">
             <div class="file">xyz</div>
-            <div class="file active">xyz</div>
+            <div class="file active target-active-file">xyz</div>
           </div>
-          <div class="group">open editors</div>
+          <div class="group target-side-bar-group">open editors</div>
           <div class="content">
             <div class="file">xyz</div>
             <div class="file">xyz</div>
           </div>
         </div>
-        <div class="lines">
+        <div class="lines target-line-gutter">
           <div class="line">1</div>
           <div class="line">2</div>
           <div class="line">3</div>
@@ -107,7 +107,7 @@
           <div class="line">14</div>
           <div class="line">15</div>
         </div>
-        <div class="editor">
+        <div class="editor target-editor">
           <div class="js show">
             <!-- const btn = document.getElementById('btn')-->
             <div class="line">
@@ -222,7 +222,7 @@
             </div>
           </div>
         </div>
-        <div class="terminal">
+        <div class="terminal target-terminal">
           <div class="pages">
             <div class="page">problems</div>
             <div class="page">output</div>
@@ -231,7 +231,7 @@
           </div>
           <div class="dropdown">1:cmd</div>
         </div>
-        <div class="status-bar"></div>
+        <div class="status-bar target-status-bar"></div>
       </div>
       <div class="theme-designer">
         <div class="theme">

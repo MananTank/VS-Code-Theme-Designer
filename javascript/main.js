@@ -130,8 +130,35 @@ function setHSLFromHex(hex) {
 	return l;
 }
 
-function getInfos(info) {
-	return info.map(i => `<p> ${i} </p>`).join('\n');
+function makeTargets(info) {
+	selectionInfo.innerHTML = '';
+	info.forEach(info => {
+		const p = document.createElement('p');
+		p.textContent = info.name;
+		const targets = document.querySelectorAll('.target-' + info.id);
+
+		if (targets) {
+			p.addEventListener('mouseover', e => {
+				targets.forEach(target => {
+					const x = getComputedStyle(target).getPropertyValue('background-color');
+					let hex = '#' + x.slice(4, -1).split(', ').join('');
+					const [h, s, l] = hexToHSL(hex);
+					console.log(h, s, l + 20);
+					target.style.animation = 'highlight 200ms linear infinite';
+					target.style.backgroundColor = `hsl(${h}deg, ${s}%, ${l + 20}%)`;
+				});
+			});
+
+			p.addEventListener('mouseout', e => {
+				targets.forEach(target => {
+					target.style.backgroundColor = null;
+					target.style.animation = null;
+				});
+			});
+		}
+
+		selectionInfo.appendChild(p);
+	});
 }
 
 function makePallete(colors, targetPallete) {
@@ -157,8 +184,7 @@ function makePallete(colors, targetPallete) {
 			selectedSection = colors;
 			selectedKey = key;
 
-			// update info, text
-			selectionInfo.innerHTML = getInfos(colors[key].info);
+			makeTargets(colors[key].info);
 			selectionInputText.value = colors[key].hex;
 
 			// set hsl
@@ -186,7 +212,7 @@ function setDefaultSelected() {
 	setHSLFromHex(layout['c10'].hex);
 	updateInputs();
 	updateText();
-	selectionInfo.innerHTML = getInfos(layout['c10'].info);
+	makeTargets(layout['c10'].info);
 }
 
 // RUN -----------------------
