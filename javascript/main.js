@@ -1,6 +1,6 @@
 import makeTheme, { scopes, others, layout } from './makeTheme.js';
 import copyToClipboard from './copyToClipboard.js';
-import { HSLToHex, hexToHSL } from './conversion.js';
+import { HSLToHex, hexToHSL, RGBToHex } from './conversion.js';
 
 let selectedColor = null;
 let selectedSection = null;
@@ -140,19 +140,46 @@ function makeTargets(info) {
 		if (targets) {
 			p.addEventListener('mouseover', e => {
 				targets.forEach(target => {
-					const x = getComputedStyle(target).getPropertyValue('background-color');
-					let hex = '#' + x.slice(4, -1).split(', ').join('');
+					let rgb;
+					if (info.forColor) {
+						rgb = getComputedStyle(target).getPropertyValue('color');
+					} else {
+						rgb = getComputedStyle(target).getPropertyValue('background');
+					}
+					const hex = RGBToHex(rgb);
 					const [h, s, l] = hexToHSL(hex);
-					console.log(h, s, l + 20);
-					target.style.animation = 'highlight 200ms linear infinite';
-					target.style.backgroundColor = `hsl(${h}deg, ${s}%, ${l + 20}%)`;
+					const col = `hsl(${h}deg, ${s}%, ${l}%)`;
+					const lighter = `hsl(${h}deg, ${s}%, ${l + 50}%)`;
+					const darker = `hsl(${h}deg, ${s}%, ${l - 30}%)`;
+					console.log('hex is', hex, h, s, l);
+
+					if (info.forColor) {
+						target.style.textShadow = `0 0 10px ${col}, 0 0 20px ${lighter}`;
+						target.style.fontWeight = 'bold';
+						// target.style.transform = 'scale(1.3)';
+						// target.style.padding = '1em 2em';
+						// target.style.boxShadow = '0 0 30px var(--c9)';
+						// target.style.
+					} else {
+						target.style.color = darker;
+						target.style.backgroundColor = lighter;
+					}
+					// target.style.animation = 'highlight 200ms linear infinite';
 				});
 			});
 
 			p.addEventListener('mouseout', e => {
 				targets.forEach(target => {
-					target.style.backgroundColor = null;
-					target.style.animation = null;
+					if (info.forColor) {
+						target.style.textShadow = null;
+						target.style.fontWeight = null;
+						target.style.transform = null;
+					} else {
+						target.style.color = null;
+						target.style.backgroundColor = null;
+					}
+					// target.style.backgroundColor = null;
+					// target.style.animation = null;
 				});
 			});
 		}

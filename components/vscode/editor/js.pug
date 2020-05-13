@@ -1,28 +1,28 @@
 .js.show
    // const btn = document.getElementById('btn')
    .line
-      .c4 const
+      .c4.target-const const
       +space
-      .c19 btn
+      .c19 counter
       +space
       .c7 =
       +space
       .c19 document.
-      .c4 getElementById
-      .c20 (
-      .c21 'btn'
-      .c20 )
+      .c4.target-var-props getElementById
+      .c19 (
+      .c21 'counter'
+      .c19 )
       .c19 ;
 
    // let count = 0
    .line
-      .c4 let
+      .c4.target-let let
       +space
       .c19 count
       +space
-      .c7 =
+      .c7.target-operators =
       +space
-      .c14 0
+      .c14.target-constants 0
       .c19 ;
 
    // empty line
@@ -33,7 +33,7 @@
    .line
       .c16 function
       +space
-      .c4 render
+      .c4.target-function-name render
       .c21 ()
       +space
       .c4 {
@@ -42,22 +42,22 @@
    .line
       +space
       +space
-      .c19 btn.
-      .c4 innerText
+      .c19 counter.
+      .c4.target-var-props innerText
       +space
-      .c7 =
+      .c7.target-operators =
       +space
       .c15 `count is
       +space
-      .c20 ${
+      .c21 ${
       .c19 count
-      .c20 }
+      .c21 }
       .c21 `
       .c19 ;
 
    // }
    .line
-      .c20 }
+      .c19 }
 
    // empty line
    .line
@@ -65,14 +65,15 @@
 
    // btn.addEventListener('click', () => {
    .line
-      .c19 btn.
-      .c4 addEventListener
-      .c20 (
+      .c19 counter.
+      .c4.target-var-props addEventListener
+      .c19 (
       .c21 'click'
       .c19 ,
       .c21 &nbsp;()&nbsp;
-      .c4 =>&nbsp;
-      .c20 {
+      .c4.target-arrow =>
+      +space
+      .c19 {
 
    // // Count from 1 to 10.
    .line
@@ -80,31 +81,36 @@
 
    // if (count < 10) {
    .line
-      .c7 &nbsp;&nbsp;if&nbsp;
-      .c20 (
+      +tab
+      .c7.target-if if
+      +space
+      .c19 (
       .c19 count
       .c7 &nbsp;<&nbsp;
-      .c14 10
-      .c20 )
-      .c20 &nbsp;{
+      .c14.target-constants 10
+      .c19 )
+      .c19 &nbsp;{
 
    // count += 1
-   .line
+   .line.current-line
       +tab
       +tab
       .c19 count
-      .c7 &nbsp;+=&nbsp;
-      .c14 1
+      .c7.target-operators &nbsp;+=&nbsp;
+      .c14.target-constants 1
+      .c19 ;
+      .cursor.target-cursor
 
    // render()
    .line
       +tab
       +tab
-      .c4 render
+      .c4.target-function-name render
       .c19 ()
+      .c19 ;
    .line
       +tab
-      .c20 }
+      .c19 }
 
    .line
-      .c20 })
+      .c19 })

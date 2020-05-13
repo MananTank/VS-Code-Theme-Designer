@@ -2,14 +2,29 @@
   grid-area editor
   background-color var(--c9)
   font-family: 'Fira Code', monospace;
-  padding  5px
+  padding 5px 0
+
+  .space
+    font-size 0.5em
 
   .line
     display flex
     font-size 12px
+    padding: 0.1em;
+    & *::selection
+      background var(--selected)
     +on-sm()
       font-size 9px
-    padding: 0.2em 0;
+
+
+    &.current-line
+      background var(--currentLine)
+    & > *
+      border 1px solid transparent
+      transition all 200ms ease
+      // background-color var(--c9)
+
+
 
 
 for i in 1..21
@@ -22,3 +37,6 @@ for i in 1..21
   color var( --currentLine)
 .selected
   color var(--selected)
+.cursor
+  background var(--c4)
+  width 0.3em

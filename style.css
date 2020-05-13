@@ -15,6 +15,7 @@
 }
 body {
   font-family: Arial;
+  -webkit-font-smoothing: antialiased;
   padding: 3em 2em;
   font-size: 9px;
   min-height: 110vh;
@@ -108,6 +109,10 @@ body {
   margin: 0.2em;
   border: 2px solid var(--border);
   cursor: pointer;
+  transition: transform 200ms ease;
+}
+.theme-designer .selection .info p:hover {
+  transform: scale(1.1);
 }
 .theme-designer .slider {
   position: relative;
@@ -193,7 +198,7 @@ body {
   height: 450px;
   display: grid;
   grid-template-columns: auto 20% 40px 1fr;
-  grid-template-rows: auto auto auto 1fr 10px;
+  grid-template-rows: auto auto auto 1fr 20px;
   grid-template-areas: 'title title title title' 'activity side tabs tabs' 'activity side lines editor' 'activity side terminal terminal' 'status status status status';
 }
 @media (max-width: 1200px) {
@@ -209,6 +214,7 @@ body {
   align-items: center;
   border-right: 1px solid var(--c2);
   padding: 0 1em;
+  position: relative;
 }
 .vscode .activity-bar svg {
   width: 2em;
@@ -220,21 +226,47 @@ body {
 .vscode .activity-bar svg:hover {
   opacity: 1;
 }
+.vscode .activity-bar .badge {
+  background: var(--c4);
+  color: #000;
+  font-size: 0.8em;
+  padding: 0.3em;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 21%;
+  transition: transform 200ms ease;
+}
 .vscode .editor {
   grid-area: editor;
   background-color: var(--c9);
   font-family: 'Fira Code', monospace;
-  padding: 5px;
+  padding: 5px 0;
+}
+.vscode .editor .space {
+  font-size: 0.5em;
 }
 .vscode .editor .line {
   display: flex;
   font-size: 12px;
-  padding: 0.2em 0;
+  padding: 0.1em;
+}
+.vscode .editor .line *::selection {
+  background: var(--selected);
 }
 @media (max-width: 1200px) {
   .vscode .editor .line {
     font-size: 9px;
   }
+}
+.vscode .editor .line.current-line {
+  background: var(--currentLine);
+}
+.vscode .editor .line > * {
+  border: 1px solid transparent;
+  transition: all 200ms ease;
 }
 .vscode .c1 {
   color: var(--c1);
@@ -308,6 +340,10 @@ body {
 .vscode .selected {
   color: var(--selected);
 }
+.vscode .cursor {
+  background: var(--c4);
+  width: 0.3em;
+}
 .vscode .lines {
   grid-area: lines;
   background-color: var(--c1);
@@ -315,10 +351,12 @@ body {
   font-size: 12px;
   padding: 5px 10px;
   text-align: right;
+  user-select: none;
 }
 .vscode .lines .line {
   font-size: 12px;
-  padding: 0.2em 0;
+  padding: 0.1em 0;
+  border: 1px solid transparent;
 }
 @media (max-width: 1200px) {
   .vscode .lines .line {
@@ -329,6 +367,7 @@ body {
   grid-area: side;
   background-color: var(--c10);
   border-right: 1px solid var(--c2);
+  user-select: none;
 }
 .vscode .side-bar .content .file {
   padding: 0.5em 0 0.5em 2em;
@@ -344,6 +383,8 @@ body {
 .vscode .side-bar .group {
   background-color: var(--c9);
   padding: 0.5em 1em;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .vscode .status-bar {
   grid-area: status;
@@ -355,10 +396,12 @@ body {
   display: flex;
 }
 .vscode .tabs .tab {
-  padding: 0.7em 1.5em;
+  padding: 1em 1.8em;
   border-right: 1px solid var(--c10);
   border-bottom: 1px solid var(--c10);
   background-color: var(--c9);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .vscode .tabs .tab:last-of-type {
   flex: 1;

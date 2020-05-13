@@ -6,6 +6,7 @@
   align-items center
   border-right 1px solid var(--c2)
   padding 0 1em
+  position relative
   svg
     width 2em
     margin-top 1.5em
@@ -13,3 +14,16 @@
     opacity 0.5
     &.active, &:hover
       opacity 1
+
+  .badge
+    background var(--c4)
+    color black
+    font-size 0.8em
+    padding 0.3em
+    display: grid
+    place-items: center
+    border-radius: 50%
+    position absolute
+    right 8px
+    top 21%
+    transition transform 200ms ease

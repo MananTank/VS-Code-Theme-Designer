@@ -70,25 +70,23 @@
                   <svg viewBox="0 0 24 24">
                     <path d="M13.5 1.5L15 0H22.5L24 1.5V9L22.5 10.5H15L13.5 9V1.5ZM15 1.5V9H22.5V1.5H15ZM0 15V6L1.5 4.5H9L10.5 6V13.5H18L19.5 15V22.5L18 24H10.5 9 1.5L0 22.5V15ZM9 13.5V6H1.5V13.5H9ZM9 15H1.5V22.5H9V15ZM10.5 22.5H18V15H10.5V22.5Z"></path>
                   </svg>
+          <div class="badge target-badges">12</div>
         </div>
         <div class="tabs">
           <div class="tab active">JavaScript</div>
-          <div class="tab target-inactive-tabs">HTML</div>
-          <div class="tab target-inactive-tabs">CSS</div>
+          <div class="tab target-inactive-tabs target-secondary-font">HTML</div>
+          <div class="tab target-inactive-tabs target-secondary-font">CSS</div>
           <div class="tab target-inactive-tabs"></div>
         </div>
         <div class="side-bar target-side-bar">
-          <div class="title">Explorer</div>
-          <div class="group target-side-bar-group">open editors</div>
-          <div class="content">
-            <div class="file">xyz</div>
-            <div class="file active target-active-file">xyz</div>
+          <div class="title target-secondary-font">Explorer</div>
+          <div class="group target-side-bar-group target-secondary-font">open editors</div>
+          <div class="content target-secondary-font">
+            <div class="file active target-active-file">cyber.js</div>
+            <div class="file">index.css</div>
+            <div class="file">index.html</div>
           </div>
-          <div class="group target-side-bar-group">open editors</div>
-          <div class="content">
-            <div class="file">xyz</div>
-            <div class="file">xyz</div>
-          </div>
+          <div class="group target-side-bar-group target-secondary-font">Project X</div>
         </div>
         <div class="lines target-line-gutter">
           <div class="line">1</div>
@@ -111,28 +109,28 @@
           <div class="js show">
             <!-- const btn = document.getElementById('btn')-->
             <div class="line">
-              <div class="c4">const</div>
+              <div class="c4 target-const">const</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">btn</div>
+              <div class="c19">counter</div>
                       <div class="space">&nbsp;</div>
               <div class="c7">=</div>
                       <div class="space">&nbsp;</div>
               <div class="c19">document.</div>
-              <div class="c4">getElementById</div>
-              <div class="c20">(</div>
-              <div class="c21">'btn'</div>
-              <div class="c20">)</div>
+              <div class="c4 target-var-props">getElementById</div>
+              <div class="c19">(</div>
+              <div class="c21">'counter'</div>
+              <div class="c19">)</div>
               <div class="c19">;</div>
             </div>
             <!-- let count = 0-->
             <div class="line">
-              <div class="c4">let</div>
+              <div class="c4 target-let">let</div>
                       <div class="space">&nbsp;</div>
               <div class="c19">count</div>
                       <div class="space">&nbsp;</div>
-              <div class="c7">=</div>
+              <div class="c7 target-operators">=</div>
                       <div class="space">&nbsp;</div>
-              <div class="c14">0</div>
+              <div class="c14 target-constants">0</div>
               <div class="c19">;</div>
             </div>
             <!-- empty line-->
@@ -143,7 +141,7 @@
             <div class="line">
               <div class="c16">function</div>
                       <div class="space">&nbsp;</div>
-              <div class="c4">render</div>
+              <div class="c4 target-function-name">render</div>
               <div class="c21">()</div>
                       <div class="space">&nbsp;</div>
               <div class="c4">{</div>
@@ -152,22 +150,22 @@
             <div class="line">
                       <div class="space">&nbsp;</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">btn.</div>
-              <div class="c4">innerText</div>
+              <div class="c19">counter.</div>
+              <div class="c4 target-var-props">innerText</div>
                       <div class="space">&nbsp;</div>
-              <div class="c7">=</div>
+              <div class="c7 target-operators">=</div>
                       <div class="space">&nbsp;</div>
               <div class="c15">`count is</div>
                       <div class="space">&nbsp;</div>
-              <div class="c20">${</div>
+              <div class="c21">${</div>
               <div class="c19">count</div>
-              <div class="c20">}</div>
+              <div class="c21">}</div>
               <div class="c21">`</div>
               <div class="c19">;</div>
             </div>
             <!-- }-->
             <div class="line">
-              <div class="c20">}</div>
+              <div class="c19">}</div>
             </div>
             <!-- empty line-->
             <div class="line">
@@ -175,14 +173,15 @@
             </div>
             <!-- btn.addEventListener('click', () => {-->
             <div class="line">
-              <div class="c19">btn.</div>
-              <div class="c4">addEventListener</div>
-              <div class="c20">(</div>
+              <div class="c19">counter.</div>
+              <div class="c4 target-var-props">addEventListener</div>
+              <div class="c19">(</div>
               <div class="c21">'click'</div>
               <div class="c19">,</div>
               <div class="c21">&nbsp;()&nbsp;</div>
-              <div class="c4">=>&nbsp;</div>
-              <div class="c20">{</div>
+              <div class="c4 target-arrow">=></div>
+                      <div class="space">&nbsp;</div>
+              <div class="c19">{</div>
             </div>
             <!-- // Count from 1 to 10.-->
             <div class="line">
@@ -190,35 +189,40 @@
             </div>
             <!-- if (count < 10) {-->
             <div class="line">
-              <div class="c7">&nbsp;&nbsp;if&nbsp;</div>
-              <div class="c20">(</div>
+                      <div class="space">&nbsp;&nbsp;</div>
+              <div class="c7 target-if">if</div>
+                      <div class="space">&nbsp;</div>
+              <div class="c19">(</div>
               <div class="c19">count</div>
               <div class="c7">&nbsp;<&nbsp;</div>
-              <div class="c14">10</div>
-              <div class="c20">)</div>
-              <div class="c20">&nbsp;{</div>
+              <div class="c14 target-constants">10</div>
+              <div class="c19">)</div>
+              <div class="c19">&nbsp;{</div>
             </div>
             <!-- count += 1-->
-            <div class="line">
+            <div class="line current-line">
                       <div class="space">&nbsp;&nbsp;</div>
                       <div class="space">&nbsp;&nbsp;</div>
               <div class="c19">count</div>
-              <div class="c7">&nbsp;+=&nbsp;</div>
-              <div class="c14">1</div>
+              <div class="c7 target-operators">&nbsp;+=&nbsp;</div>
+              <div class="c14 target-constants">1</div>
+              <div class="c19">;</div>
+              <div class="cursor target-cursor"></div>
             </div>
             <!-- render()-->
             <div class="line">
                       <div class="space">&nbsp;&nbsp;</div>
                       <div class="space">&nbsp;&nbsp;</div>
-              <div class="c4">render</div>
+              <div class="c4 target-function-name">render</div>
               <div class="c19">()</div>
+              <div class="c19">;</div>
             </div>
             <div class="line">
                       <div class="space">&nbsp;&nbsp;</div>
-              <div class="c20">}</div>
+              <div class="c19">}</div>
             </div>
             <div class="line">
-              <div class="c20">})</div>
+              <div class="c19">})</div>
             </div>
           </div>
         </div>
