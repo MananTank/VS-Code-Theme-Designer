@@ -73,7 +73,7 @@
           <div class="badge target-badges">12</div>
         </div>
         <div class="tabs">
-          <div class="tab active">JavaScript</div>
+          <div class="tab active target-active-tab">JavaScript</div>
           <div class="tab target-inactive-tabs target-secondary-font">HTML</div>
           <div class="tab target-inactive-tabs target-secondary-font">CSS</div>
           <div class="tab target-inactive-tabs"></div>
@@ -107,31 +107,32 @@
         </div>
         <div class="editor target-editor">
           <div class="js show">
-            <!-- const btn = document.getElementById('btn')-->
+            <!-- const counter = document.querySelector('.counter')-->
             <div class="line">
               <div class="c4 target-const">const</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">counter</div>
+              <div class="c19 target-var-names">counter</div>
                       <div class="space">&nbsp;</div>
               <div class="c7">=</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">document.</div>
-              <div class="c4 target-var-props">getElementById</div>
+              <div class="c19 target-var-names">document</div>
+              <div class="c19 target-dots">.</div>
+              <div class="c4 target-var-props">querySelector</div>
               <div class="c19">(</div>
-              <div class="c21">'counter'</div>
+              <div class="c21">'.counter'</div>
               <div class="c19">)</div>
-              <div class="c19">;</div>
+              <div class="c19 target-dots">;</div>
             </div>
             <!-- let count = 0-->
             <div class="line">
               <div class="c4 target-let">let</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">count</div>
+              <div class="c19 target-var-names">count</div>
                       <div class="space">&nbsp;</div>
               <div class="c7 target-operators">=</div>
                       <div class="space">&nbsp;</div>
               <div class="c14 target-constants">0</div>
-              <div class="c19">;</div>
+              <div class="c19 target-dots">;</div>
             </div>
             <!-- empty line-->
             <div class="line">
@@ -139,49 +140,51 @@
             </div>
             <!-- function render() {-->
             <div class="line">
-              <div class="c16">function</div>
+              <div class="c16 target-function-keyword">function</div>
                       <div class="space">&nbsp;</div>
               <div class="c4 target-function-name">render</div>
               <div class="c21">()</div>
                       <div class="space">&nbsp;</div>
-              <div class="c4">{</div>
+              <div class="c19 target-curly">{</div>
             </div>
             <!-- _ btn.innerText = `Count: ${count}`-->
             <div class="line">
                       <div class="space">&nbsp;</div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">counter.</div>
+              <div class="c19 target-var-names">counter</div>
+              <div class="c19 target-dots">.</div>
               <div class="c4 target-var-props">innerText</div>
                       <div class="space">&nbsp;</div>
               <div class="c7 target-operators">=</div>
                       <div class="space">&nbsp;</div>
-              <div class="c15">`count is</div>
+              <div class="c15 target-template-strings">`count is</div>
                       <div class="space">&nbsp;</div>
               <div class="c21">${</div>
-              <div class="c19">count</div>
+              <div class="c19 target-var-names">count</div>
               <div class="c21">}</div>
-              <div class="c21">`</div>
-              <div class="c19">;</div>
+              <div class="c21 target-template-strings">`</div>
+              <div class="c19 target-dots">;</div>
             </div>
             <!-- }-->
             <div class="line">
-              <div class="c19">}</div>
+              <div class="c19 target-curly">}</div>
             </div>
             <!-- empty line-->
             <div class="line">
                       <div class="space">&nbsp;</div>
             </div>
-            <!-- btn.addEventListener('click', () => {-->
+            <!-- counter.addEventListener('click', () => {-->
             <div class="line">
-              <div class="c19">counter.</div>
+              <div class="c19 target-var-names">counter</div>
+              <div class="c19 target-dots">.</div>
               <div class="c4 target-var-props">addEventListener</div>
               <div class="c19">(</div>
               <div class="c21">'click'</div>
-              <div class="c19">,</div>
+              <div class="c19 target-dots">,</div>
               <div class="c21">&nbsp;()&nbsp;</div>
               <div class="c4 target-arrow">=></div>
                       <div class="space">&nbsp;</div>
-              <div class="c19">{</div>
+              <div class="c19 target-curly">{</div>
             </div>
             <!-- // Count from 1 to 10.-->
             <div class="line">
@@ -193,20 +196,20 @@
               <div class="c7 target-if">if</div>
                       <div class="space">&nbsp;</div>
               <div class="c19">(</div>
-              <div class="c19">count</div>
+              <div class="c19 target-var-names">count</div>
               <div class="c7">&nbsp;<&nbsp;</div>
               <div class="c14 target-constants">10</div>
               <div class="c19">)</div>
-              <div class="c19">&nbsp;{</div>
+              <div class="c19 target-curly">&nbsp;{</div>
             </div>
             <!-- count += 1-->
             <div class="line current-line">
                       <div class="space">&nbsp;&nbsp;</div>
                       <div class="space">&nbsp;&nbsp;</div>
-              <div class="c19">count</div>
+              <div class="c19 target-var-names">count</div>
               <div class="c7 target-operators">&nbsp;+=&nbsp;</div>
               <div class="c14 target-constants">1</div>
-              <div class="c19">;</div>
+              <div class="c19 target-dots">;</div>
               <div class="cursor target-cursor"></div>
             </div>
             <!-- render()-->
@@ -215,14 +218,14 @@
                       <div class="space">&nbsp;&nbsp;</div>
               <div class="c4 target-function-name">render</div>
               <div class="c19">()</div>
-              <div class="c19">;</div>
+              <div class="c19 target-dots">;</div>
             </div>
             <div class="line">
                       <div class="space">&nbsp;&nbsp;</div>
-              <div class="c19">}</div>
+              <div class="c19 target-curly">}</div>
             </div>
             <div class="line">
-              <div class="c19">})</div>
+              <div class="c19 target-curly">})</div>
             </div>
           </div>
         </div>
@@ -266,7 +269,13 @@
             <div class="bubble"></div>
             <input type="range" min="0" max="100"/>
           </div>
-          <div class="title">TARGETS</div>
+          <div class="title">
+            <div>TARGETS</div>
+                    <svg class="info-icon" enable-background="new 0 0 524.235 524.235" height="512" viewbox="0 0 524.235 524.235" width="512" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m262.118 0c-144.53 0-262.118 117.588-262.118 262.118s117.588 262.118 262.118 262.118 262.118-117.588 262.118-262.118-117.589-262.118-262.118-262.118zm17.05 417.639c-12.453 2.076-37.232 7.261-49.815 8.303-10.651.882-20.702-5.215-26.829-13.967-6.143-8.751-7.615-19.95-3.968-29.997l49.547-136.242h-51.515c-.044-28.389 21.25-49.263 48.485-57.274 12.997-3.824 37.212-9.057 49.809-8.255 7.547.48 20.702 5.215 26.829 13.967 6.143 8.751 7.615 19.95 3.968 29.997l-49.547 136.242h51.499c.01 28.356-20.49 52.564-48.463 57.226zm15.714-253.815c-18.096 0-32.765-14.671-32.765-32.765 0-18.096 14.669-32.765 32.765-32.765s32.765 14.669 32.765 32.765c0 18.095-14.668 32.765-32.765 32.765z"></path>
+                    </svg>
+            <div class="tip">selected color applies on the below items, hover over item to see where they are on the editor</div>
+          </div>
           <div class="info"></div>
           <div class="copy-theme">
             <textarea spellcheck="false" readonly="readonly"></textarea>

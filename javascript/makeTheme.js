@@ -28,6 +28,7 @@ export const layout = {
 			{ name: 'activity bar', id: 'activity-bar' },
 			{ name: 'line number gutter', id: 'line-gutter' },
 			{ name: 'terminal', id: 'terminal' },
+			{ name: 'active tab', id: 'active-tab' },
 		],
 	},
 	c9: {
@@ -65,7 +66,7 @@ export const scopes = {
 		info: [
 			{ name: '=>', id: 'arrow', forColor: true },
 			{ name: 'function name', id: 'function-name', forColor: true },
-			{ name: 'badges', id: 'badges', forColor: true },
+			{ name: 'badges', id: 'badges' },
 			{ name: 'cursor', id: 'cursor', forColor: true },
 			{ name: 'const', id: 'const', forColor: true },
 			{ name: 'let', id: 'let', forColor: true },
@@ -87,16 +88,11 @@ export const scopes = {
 	},
 	c14: {
 		hex: '#ff628c',
-		info: [
-			{ name: 'constants', id: 'constants', forColor: true },
-			{ name: 'escape characters', id: 'escape-characters', forColor: true },
-		],
-		forColor: true,
+		info: [{ name: 'constants', id: 'constants', forColor: true }],
 	},
 	c15: {
 		hex: '#3ad900',
 		info: [
-			{ name: 'git untracked U', id: 'git-u', forColor: true },
 			{ name: 'template strings', id: 'template-strings', forColor: true },
 			{ name: 'class names', id: 'css-class', forColor: true },
 			{ name: 'var( )', id: 'css-var', forColor: true },
@@ -111,16 +107,16 @@ export const scopes = {
 	c18: {
 		hex: '#9effff',
 		info: [
-			{ name: 'function arguments', id: 'function-arguments', forColor: true },
-			{ name: '& in css preprocessors', id: 'css-&', forColor: true },
+			{ name: '& in css preprocessors', id: 'css-and', forColor: true },
 			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
 		],
 	},
+
 	c19: {
 		hex: '#e1efff',
 		info: [
 			{ name: '{ }', id: 'curly', forColor: true },
-			{ name: ': . ;', id: 'colons', forColor: true },
+			{ name: ': . , ;', id: 'dots', forColor: true },
 			{ name: 'variable names', id: 'var-names', forColor: true },
 		],
 	},

@@ -29,6 +29,30 @@
       letter-spacing: 0.1em
       font-size 2em
       text-transform: uppercase
+      display flex
+      align-items center
+      position relative
+
+      .info-icon
+         width 1em
+         height 1em
+         margin-left 0.5em
+         fill var(--color)
+         cursor pointer
+         &:hover ~ .tip
+            opacity 1
+
+
+      .tip
+         opacity 0
+         background white
+         box-shadow 0 0 2px var(--color)
+         pointer-events: none
+         padding 2em
+         position absolute
+         top 0
+         left 0
+
 
    .info
       font-size 1.5em

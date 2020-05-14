@@ -1,29 +1,30 @@
 .js.show
-   // const btn = document.getElementById('btn')
+   // const counter = document.querySelector('.counter')
    .line
       .c4.target-const const
       +space
-      .c19 counter
+      .c19.target-var-names counter
       +space
       .c7 =
       +space
-      .c19 document.
-      .c4.target-var-props getElementById
+      .c19.target-var-names document
+      .c19.target-dots .
+      .c4.target-var-props querySelector
       .c19 (
-      .c21 'counter'
+      .c21 '.counter'
       .c19 )
-      .c19 ;
+      .c19.target-dots ;
 
    // let count = 0
    .line
       .c4.target-let let
       +space
-      .c19 count
+      .c19.target-var-names count
       +space
       .c7.target-operators =
       +space
       .c14.target-constants 0
-      .c19 ;
+      .c19.target-dots ;
 
    // empty line
    .line
@@ -31,49 +32,51 @@
 
    // function render() {
    .line
-      .c16 function
+      .c16.target-function-keyword function
       +space
       .c4.target-function-name render
       .c21 ()
       +space
-      .c4 {
+      .c19.target-curly {
 
    // _ btn.innerText = `Count: ${count}`
    .line
       +space
       +space
-      .c19 counter.
+      .c19.target-var-names counter
+      .c19.target-dots .
       .c4.target-var-props innerText
       +space
       .c7.target-operators =
       +space
-      .c15 `count is
+      .c15.target-template-strings `count is
       +space
       .c21 ${
-      .c19 count
+      .c19.target-var-names count
       .c21 }
-      .c21 `
-      .c19 ;
+      .c21.target-template-strings `
+      .c19.target-dots ;
 
    // }
    .line
-      .c19 }
+      .c19.target-curly }
 
    // empty line
    .line
       +space
 
-   // btn.addEventListener('click', () => {
+   // counter.addEventListener('click', () => {
    .line
-      .c19 counter.
+      .c19.target-var-names counter
+      .c19.target-dots .
       .c4.target-var-props addEventListener
       .c19 (
       .c21 'click'
-      .c19 ,
+      .c19.target-dots ,
       .c21 &nbsp;()&nbsp;
       .c4.target-arrow =>
       +space
-      .c19 {
+      .c19.target-curly {
 
    // // Count from 1 to 10.
    .line
@@ -85,20 +88,20 @@
       .c7.target-if if
       +space
       .c19 (
-      .c19 count
+      .c19.target-var-names count
       .c7 &nbsp;<&nbsp;
       .c14.target-constants 10
       .c19 )
-      .c19 &nbsp;{
+      .c19.target-curly &nbsp;{
 
    // count += 1
    .line.current-line
       +tab
       +tab
-      .c19 count
+      .c19.target-var-names count
       .c7.target-operators &nbsp;+=&nbsp;
       .c14.target-constants 1
-      .c19 ;
+      .c19.target-dots ;
       .cursor.target-cursor
 
    // render()
@@ -107,10 +110,10 @@
       +tab
       .c4.target-function-name render
       .c19 ()
-      .c19 ;
+      .c19.target-dots ;
    .line
       +tab
-      .c19 }
+      .c19.target-curly }
 
    .line
-      .c19 })
+      .c19.target-curly })

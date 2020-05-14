@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap");
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   width: 100%;
   max-width: 1300px;
   grid-gap: 30px;
@@ -92,6 +92,29 @@ body {
   letter-spacing: 0.1em;
   font-size: 2em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.theme-designer .selection .title .info-icon {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  fill: var(--color);
+  cursor: pointer;
+}
+.theme-designer .selection .title .info-icon:hover ~ .tip {
+  opacity: 1;
+}
+.theme-designer .selection .title .tip {
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 2px var(--color);
+  pointer-events: none;
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .theme-designer .selection .info {
   font-size: 1.5em;
@@ -244,6 +267,10 @@ body {
   background-color: var(--c9);
   font-family: 'Fira Code', monospace;
   padding: 5px 0;
+}
+.vscode .editor.dim .line > * {
+  filter: grayscale(100%);
+  opacity: 0.2;
 }
 .vscode .editor .space {
   font-size: 0.5em;
@@ -402,6 +429,7 @@ body {
   background-color: var(--c9);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .vscode .tabs .tab:last-of-type {
   flex: 1;

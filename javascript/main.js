@@ -149,20 +149,19 @@ function makeTargets(info) {
 					const hex = RGBToHex(rgb);
 					const [h, s, l] = hexToHSL(hex);
 					const col = `hsl(${h}deg, ${s}%, ${l}%)`;
-					const lighter = `hsl(${h}deg, ${s}%, ${l + 50}%)`;
+					const lighter = `hsl(${h}deg, ${s}%, ${l + 30}%)`;
 					const darker = `hsl(${h}deg, ${s}%, ${l - 30}%)`;
 					console.log('hex is', hex, h, s, l);
 
 					if (info.forColor) {
-						target.style.textShadow = `0 0 10px ${col}, 0 0 20px ${lighter}`;
+						// target.style.textShadow = `0 0 0.5em ${col}`;
 						target.style.fontWeight = 'bold';
-						// target.style.transform = 'scale(1.3)';
-						// target.style.padding = '1em 2em';
-						// target.style.boxShadow = '0 0 30px var(--c9)';
-						// target.style.
+						target.style.filter = 'none';
+						target.style.opacity = 1;
+						document.querySelector('.editor').classList.add('dim');
 					} else {
-						target.style.color = darker;
-						target.style.backgroundColor = lighter;
+						target.style.color = 'transparent';
+						target.style.background = `repeating-linear-gradient(45deg, ${lighter} 0 1px, ${hex} 0 5px)`;
 					}
 					// target.style.animation = 'highlight 200ms linear infinite';
 				});
@@ -171,12 +170,14 @@ function makeTargets(info) {
 			p.addEventListener('mouseout', e => {
 				targets.forEach(target => {
 					if (info.forColor) {
-						target.style.textShadow = null;
+						// target.style.textShadow = null;
 						target.style.fontWeight = null;
-						target.style.transform = null;
+						target.style.filter = null;
+						target.style.opacity = null;
+						document.querySelector('.editor').classList.remove('dim');
 					} else {
 						target.style.color = null;
-						target.style.backgroundColor = null;
+						target.style.background = null;
 					}
 					// target.style.backgroundColor = null;
 					// target.style.animation = null;
