@@ -107,7 +107,7 @@ export const scopes = {
 	c18: {
 		hex: '#9effff',
 		info: [
-			{ name: '& in css preprocessors', id: 'css-and', forColor: true },
+			{ name: '& (parent)', id: 'css-and', forColor: true },
 			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
 		],
 	},

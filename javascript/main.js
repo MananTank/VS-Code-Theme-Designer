@@ -21,7 +21,11 @@ const satInput = document.querySelector('.saturation input');
 const sliderInputs = document.querySelectorAll('.slider input');
 
 function darker(x) {
-	return `hsl(${hue}deg, ${saturation}%, ${Number(lightness) - x}%)`;
+	return `hsl(${hue}deg, ${saturation + 10}%, ${Number(lightness) - x}%)`;
+}
+
+function lighter(x) {
+	return `hsl(${hue}deg, ${saturation - 10}%, ${Number(lightness) + x}%)`;
 }
 
 // Update color in UI and in object
@@ -30,11 +34,13 @@ function setColor() {
 	selectedColor.style.setProperty('--color', newColor);
 	document.documentElement.style.setProperty(`--${selectedKey}`, newColor);
 
-	if (lightness > 60) {
+	if (lightness > 50) {
 		selection.style.setProperty('--font', 'black');
+		selection.style.setProperty('--hover', darker(20));
 		selection.style.setProperty('--border', darker(10));
 	} else {
 		selection.style.setProperty('--font', 'white');
+		selection.style.setProperty('--hover', lighter(20));
 		selection.style.setProperty('--border', 'white');
 	}
 	selection.style.setProperty('--color', newColor);

@@ -1,4 +1,6 @@
 .selection
+   display flex
+   flex-direction: column
    @import 'copy/_'
 
    --h 180deg
@@ -23,24 +25,7 @@
       &:active, &:focus
          outline none
 
-   .title
-      margin-top 30px
-      margin-bottom 20px
-      letter-spacing: 0.1em
-      font-size 2em
-      text-transform: uppercase
-      display flex
-      align-items center
-      position relative
 
-      .info-icon
-         width 1em
-         height 1em
-         margin-left 0.5em
-         fill var(--color)
-         cursor pointer
-         &:hover ~ .tip
-            opacity 1
 
 
       .tip
@@ -56,10 +41,13 @@
 
    .info
       font-size 1.5em
-      margin-top 1em
+      margin 20px 0
       text-transform: lowercase
       display flex
       flex-wrap wrap
+      // border: 1px solid hsl(0, 100%, 50%);
+      min-height: 100px;
+      align-content: center;
 
       p
          background-color var(--color)
@@ -67,12 +55,16 @@
          display inline-block
          border-radius 6px
          padding 0.5em 1em
-         margin 0.2em
+         margin 0.2em 0.4em
+         margin-left -1px;
          border 2px solid var(--border)
          cursor pointer
          transition transform 200ms ease
+         height 20px
          &:hover
-            transform scale(1.1)
+            background var(--hover)
+            // border 2px solid transparent
+            // color var(--color)
 
 
 

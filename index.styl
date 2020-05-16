@@ -9,6 +9,8 @@ on-xs()
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap');
 
+
+
 .container
   display grid
   grid-template-columns: 1.5fr 1fr
@@ -16,6 +18,9 @@ on-xs()
   max-width 1300px
   grid-gap 30px
   margin 0 auto
+  padding 30px 10px
+  align-items: center
+  // border 1px solid
   +on-sm()
     max-width 700px
     grid-template-columns: 1fr
@@ -24,9 +29,13 @@ on-xs()
 body
   font-family     Arial
   -webkit-font-smoothing: antialiased;
-  padding 3em 2em
   font-size 9px
-  min-height: 110vh
+  min-height: 100vh
+  box-sizing: border-box
+  margin 0
+  padding 0
+  display grid
+  place-items center
   +on-xs()
     font-size 7px
 
