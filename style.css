@@ -192,13 +192,7 @@ body {
   grid-gap: 2em;
 }
 .theme-designer .theme .pallete .color {
-  --color: #000;
-  display: grid;
-  grid-template-rows: auto 1fr;
   cursor: pointer;
-  transition: 100ms ease;
-  position: relative;
-  background-color: var(--color);
   transition: all 100ms ease;
   border-radius: 4px;
 }

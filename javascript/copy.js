@@ -1,9 +1,7 @@
-import makeTheme from './makeTheme.js';
-
 const copyButton = document.querySelector('.copy');
 
 // COPY TO CLIPBOARD
-export default function copyToClipboard() {
+function copyToClipboard() {
 	makeTheme();
 	const copyText = document.querySelector('textarea');
 	copyText.select();
@@ -14,3 +12,6 @@ export default function copyToClipboard() {
 		copyButton.textContent = 'COPY THEME.JSON';
 	}, 2000);
 }
+
+// copy
+document.querySelector('.copy').addEventListener('click', copyToClipboard);

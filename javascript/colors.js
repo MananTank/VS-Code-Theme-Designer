@@ -1,4 +1,7 @@
-export function HSLToHex(h, s, l) {
+function HSLToHex(h, s, l) {
+	if (s > 100) s = 100;
+	if (l > 100) l = 100;
+
 	s /= 100;
 	l /= 100;
 
@@ -47,7 +50,7 @@ export function HSLToHex(h, s, l) {
 	return '#' + r + g + b;
 }
 
-export function hexToHSL(H) {
+function hexToHSL(H) {
 	// Convert hex to RGB first
 	let r = 0,
 		g = 0,
@@ -89,7 +92,7 @@ export function hexToHSL(H) {
 	return [h, s, l];
 }
 
-export function RGBToHex(rgb) {
+function RGBToHex(rgb) {
 	// Choose correct separator
 	let sep = rgb.indexOf(',') > -1 ? ',' : ' ';
 	// Turn "rgb(r,g,b)" into [r,g,b]
@@ -104,4 +107,16 @@ export function RGBToHex(rgb) {
 	if (b.length == 1) b = '0' + b;
 
 	return '#' + r + g + b;
+}
+
+function darker(x, color = selected.color) {
+	return `hsl(${color.h}deg, ${color.s + 10}%, ${Number(color.l) - x}%)`;
+}
+
+function lighter(x, color = selected.color) {
+	return `hsl(${color.h}deg, ${color.s - 10}%, ${Number(color.l) + x}%)`;
+}
+
+function getLightness(hex) {
+	return hexToHSL(hex)[2];
 }

@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 html
+   head
+      title CODE THEMER
    body
       link(rel="stylesheet" type="text/css" href='style.css')
-      script(src='./javascript/main.js' defer type="module")
-      script(src='./javascript/tabs.js' defer)
+
 
       .container
          include components/vscode/_
          include components/theme-designer/_
+
+      // must be this order
+      script(src='./javascript/themer.js' )
+      script(src='./javascript/colors.js' )
+      //
+      script(src='./javascript/variables.js' )
+      script(src='./javascript/sliders.js' )
+      script(src='./javascript/pallete.js' )
+      script(src='./javascript/targets.js' )
+      script(src='./javascript/main.js' )

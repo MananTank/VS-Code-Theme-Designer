@@ -1,19 +1,4 @@
-const themeName = 'Cobalt';
-
-export const fixed = {
-	// used as font color
-	c5: '#000000',
-	// leave as is
-	c13: '#A22929',
-	// leave as is
-	c17: '#80fcff',
-	// not used in JS, TS - type name
-	c22: '#80ffbb',
-	// inherited component - JS and TS (not very used)
-	c23: '#cccccc',
-};
-
-export const layout = {
+const layout = {
 	c10: {
 		hex: '#15232d',
 		info: [
@@ -56,7 +41,7 @@ export const layout = {
 	},
 };
 
-export const scopes = {
+const scopes = {
 	c20: {
 		hex: '#ffee80',
 		info: [{ name: 'CSS property values', id: 'css-props', forColor: true }],
@@ -130,7 +115,7 @@ export const scopes = {
 	},
 };
 
-export const others = {
+const others = {
 	currentLine: {
 		hex: '#1F4662',
 		info: [{ name: 'current line', id: 'current-line' }],
@@ -145,10 +130,24 @@ export const others = {
 	},
 };
 
-export default function makeTheme() {
+const fixed = {
+	// used as font color
+	c5: '#000000',
+	// leave as is
+	c13: '#A22929',
+	// leave as is
+	c17: '#80fcff',
+	// not used in JS, TS - type name
+	c22: '#80ffbb',
+	// inherited component - JS and TS (not very used)
+	c23: '#cccccc',
+};
+
+function makeTheme() {
 	document.querySelector('textarea').textContent = `{
     "$schema": "vscode://schemas/color-theme",
-    "name": "${themeName}",
+    "name": "YOUR-THEME-NAME",
+    // select your theme type dark/light
     "type": "dark",
     "colors": {
       // activityBar
