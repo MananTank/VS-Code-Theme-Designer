@@ -1,0 +1,26 @@
+{
+	"name": "vscode-theme-designer",
+	"version": "1.0.0",
+	"description": "Design your theme in seconds ",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"convert-pug": "pug -w index.pug -o ./ -P",
+		"convert-stylus": "stylus -w index.styl -o style.css",
+		"dev": "start npm run convert-pug && start npm run convert-stylus"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MananTank/VS-Code-Theme-Designer.git"
+	},
+	"keywords": [
+		"vscode",
+		"theme"
+	],
+	"author": "Manan Tank",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/MananTank/VS-Code-Theme-Designer/issues"
+	},
+	"homepage": "https://github.com/MananTank/VS-Code-Theme-Designer#readme"
+}
