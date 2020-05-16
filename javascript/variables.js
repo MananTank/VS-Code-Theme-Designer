@@ -1,4 +1,4 @@
-// state
+// app state
 const selected = {
 	pallete: layout,
 	key: 'c10',
@@ -20,7 +20,7 @@ const selected = {
 		setHSL: function (h, s, l) {
 			if (s > 100) s = 100;
 			if (l > 100) l = 100;
-			this.h = s;
+			this.h = h;
 			this.s = s;
 			this.l = l;
 		},
@@ -51,7 +51,7 @@ function dottify(color = selected.color.getHEX(), colorDiv = selected.color.node
 
 // when a new color is selected by clicking on the color itself
 function updateSelectionVariables() {
-	const isLight = selected.color.l > 50;
+	const isLight = selected.color.l > 80;
 
 	const props = {
 		h: selected.color.h + 'deg',
@@ -59,7 +59,7 @@ function updateSelectionVariables() {
 		l: selected.color.l + '%',
 		color: selected.color.getHEX(),
 		font: isLight ? 'black' : 'white',
-		border: isLight ? 'black' : 'white',
+		border: isLight ? darker(20) : 'white',
 		hover: isLight ? darker(20) : lighter(20),
 	};
 
@@ -68,7 +68,7 @@ function updateSelectionVariables() {
 	}
 }
 
-function updateSelectedColor(newColorNode) {
+function updateSelectedColorNode(newColorNode) {
 	selected.color.node.classList.remove('active');
 	selected.color.node = newColorNode;
 	selected.color.node.classList.add('active');

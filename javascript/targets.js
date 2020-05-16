@@ -2,12 +2,18 @@ function updateTargets() {
 	// remove old targets
 	targets.innerHTML = '';
 
+	// create Ps for each entry in info
 	selected.pallete[selected.key].info.forEach(info => {
+		// create p
 		const p = document.createElement('p');
 		p.textContent = info.name;
-		const targetNodes = document.querySelectorAll('.target-' + info.id);
 
-		if (targetNodes) {
+		// find its targets
+		const targetNodes = document.querySelectorAll('.target-' + info.id);
+		console.log(targetNodes);
+
+		// if it has targets
+		if (targetNodes.length) {
 			p.addEventListener('mouseover', e => {
 				targetNodes.forEach(target => {
 					let rgb;
@@ -53,6 +59,12 @@ function updateTargets() {
 					// target.style.animation = null;
 				});
 			});
+		}
+
+		// if it does not have targets, disable it
+		else {
+			p.style.opacity = 0.2;
+			p.classList.add('no-targets');
 		}
 
 		targets.appendChild(p);

@@ -26,12 +26,13 @@ function makePallete(pallete, targetPallete) {
 			// update selected
 			selected.pallete = pallete;
 			selected.key = key;
-			selected.color.setHEX(color);
+			selected.color.setHEX(pallete[key].hex);
 
 			updateHSLSliders();
 			updateTargets();
+			updateSelectionVariables();
 			updateHexInput();
-			updateSelectedColor(colorDiv);
+			updateSelectedColorNode(colorDiv);
 		}
 	}
 }
