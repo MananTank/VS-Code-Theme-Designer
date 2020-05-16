@@ -7,6 +7,8 @@ const satInput = document.querySelector('.saturation input');
 hexInput.addEventListener('input', e => {
 	selected.color.setHEX(e.target.value);
 	updateHSLSliders();
+	handleColorChange();
+	updateSelectionVariables();
 });
 
 function updateBubble(s) {
@@ -66,9 +68,7 @@ function updateHSLSliders() {
 // when the color is changed via either a slider or hex input
 function handleColorChange() {
 	const newColor = selected.color.getHEX();
-	// change selected color div's color in rendering
-	selected.pallete[selected.key] = newColor;
+	selected.pallete[selected.key].hex = newColor;
 	updateCssVar(selected.key, newColor);
-	// change in pallete for json
 	dottify();
 }

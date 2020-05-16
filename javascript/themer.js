@@ -1,4 +1,13 @@
 const layout = {
+	c9: {
+		hex: '#193549',
+		info: [
+			{ name: 'editor', id: 'editor' },
+			{ name: 'inactive tabs', id: 'inactive-tabs' },
+			{ name: 'side bar group', id: 'side-bar-group' },
+		],
+	},
+
 	c10: {
 		hex: '#15232d',
 		info: [
@@ -16,14 +25,7 @@ const layout = {
 			{ name: 'active tab', id: 'active-tab' },
 		],
 	},
-	c9: {
-		hex: '#193549',
-		info: [
-			{ name: 'editor', id: 'editor' },
-			{ name: 'inactive tabs', id: 'inactive-tabs' },
-			{ name: 'side bar group', id: 'side-bar-group' },
-		],
-	},
+
 	c2: {
 		hex: '#0d3a58',
 		info: [{ name: 'active file', id: 'active-file' }],
@@ -42,6 +44,17 @@ const layout = {
 };
 
 const scopes = {
+	c7: {
+		hex: '#ff9d00',
+		info: [
+			{ name: 'conditions', id: 'if', forColor: true },
+			{ name: 'operators', id: 'operators', forColor: true },
+			{ name: 'import export', id: 'import', forColor: true },
+			{ name: 'css units', id: 'css-units', forColor: true },
+			{ name: '!important', id: 'important', forColor: true },
+		],
+	},
+
 	c4: {
 		hex: '#ffc600',
 		info: [
@@ -56,14 +69,11 @@ const scopes = {
 		],
 	},
 
-	c7: {
-		hex: '#ff9d00',
+	c20: {
+		hex: '#ffee80',
 		info: [
-			{ name: 'conditions', id: 'if', forColor: true },
-			{ name: 'operators', id: 'operators', forColor: true },
-			{ name: 'import export', id: 'import', forColor: true },
-			{ name: 'css units', id: 'css-units', forColor: true },
-			{ name: '!important', id: 'important', forColor: true },
+			{ name: 'CSS property values', id: 'css-props', forColor: true },
+			{ name: '()', id: 'parentheses', forColor: true },
 		],
 	},
 
@@ -72,7 +82,6 @@ const scopes = {
 		info: [
 			{ name: 'strings', id: 'strings', forColor: true },
 			{ name: 'css properties', id: 'css properties', forColor: true },
-			{ name: '()', id: 'parentheses', forColor: true },
 		],
 	},
 
@@ -92,8 +101,17 @@ const scopes = {
 		info: [
 			{ name: '{ }', id: 'curly', forColor: true },
 			{ name: ': . , ;', id: 'dots', forColor: true },
-			{ name: 'variable names', id: 'var-names', forColor: true },
 		],
+	},
+
+	c25: {
+		hex: '#47EDFF',
+		info: [{ name: 'object', id: 'object', forColor: true }],
+	},
+
+	c24: {
+		hex: '#e1efff',
+		info: [{ name: 'variable names', id: 'var-names', forColor: true }],
 	},
 
 	c14: {
@@ -112,11 +130,6 @@ const scopes = {
 			{ name: '& (parent)', id: 'css-and', forColor: true },
 			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
 		],
-	},
-
-	c20: {
-		hex: '#ffee80',
-		info: [{ name: 'CSS property values', id: 'css-props', forColor: true }],
 	},
 };
 
@@ -501,7 +514,7 @@ function makeTheme() {
         "name": "Punctuation Parameters",
         "scope": "punctuation.definition.parameters",
         "settings": {
-          "foreground": "${scopes.c21.hex}"
+          "foreground": "${scopes.c20.hex}"
         }
       },
       {
@@ -564,7 +577,7 @@ function makeTheme() {
         "name": "Variable",
         "scope": "variable",
         "settings": {
-          "foreground": "${scopes.c19.hex}"
+          "foreground": "${scopes.c24.hex}"
         }
       },
       {
@@ -938,7 +951,7 @@ function makeTheme() {
         "name": "[JAVASCRIPT] - JS objects",
         "scope" : "variable.other.object.js",
         "settings": {
-          "foreground": "${scopes.c4.hex}"
+          "foreground": "${scopes.c25.hex}"
         }
       },
 

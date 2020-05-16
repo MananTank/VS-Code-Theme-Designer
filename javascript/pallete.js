@@ -24,9 +24,9 @@ function makePallete(pallete, targetPallete) {
 
 		function handleClick() {
 			// update selected
+			selected.color.setHEX(pallete[key].hex);
 			selected.pallete = pallete;
 			selected.key = key;
-			selected.color.setHEX(pallete[key].hex);
 
 			updateHSLSliders();
 			updateTargets();
