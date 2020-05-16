@@ -30,22 +30,18 @@ const layout = {
 	},
 	c8: {
 		hex: '#aaaaaa',
-		info: [{ name: 'secondary font color', id: 'secondary-font', forColor: true }],
+		info: [{ name: 'secondary font color', id: 'secondary-font' }],
 	},
 	c3: {
 		hex: '#ffffff',
 		info: [
-			{ name: 'primary font color', id: 'primary-font', forColor: true },
-			{ name: 'activity bar icons', id: 'activity-bar-icon', forColor: true },
+			{ name: 'primary font color', id: 'primary-font', forShine: true },
+			{ name: 'activity bar icons', id: 'activity-bar-icon', forShine: true },
 		],
 	},
 };
 
 const scopes = {
-	c20: {
-		hex: '#ffee80',
-		info: [{ name: 'CSS property values', id: 'css-props', forColor: true }],
-	},
 	c4: {
 		hex: '#ffc600',
 		info: [
@@ -63,18 +59,23 @@ const scopes = {
 	c7: {
 		hex: '#ff9d00',
 		info: [
-			{ name: 'if else', id: 'if', forColor: true },
-			{ name: 'operators  + - = < > ..', id: 'operators', forColor: true },
-			{ name: 'import', id: 'import', forColor: true },
-			{ name: 'export', id: 'export', forColor: true },
-			{ name: 'css units cm px em ..', id: 'css-units', forColor: true },
+			{ name: 'conditions', id: 'if', forColor: true },
+			{ name: 'operators', id: 'operators', forColor: true },
+			{ name: 'import export', id: 'import', forColor: true },
+			{ name: 'css units', id: 'css-units', forColor: true },
 			{ name: '!important', id: 'important', forColor: true },
 		],
 	},
-	c14: {
-		hex: '#ff628c',
-		info: [{ name: 'constants', id: 'constants', forColor: true }],
+
+	c21: {
+		hex: '#a5ff90',
+		info: [
+			{ name: 'strings', id: 'strings', forColor: true },
+			{ name: 'css properties', id: 'css properties', forColor: true },
+			{ name: '()', id: 'parentheses', forColor: true },
+		],
 	},
+
 	c15: {
 		hex: '#3ad900',
 		info: [
@@ -83,17 +84,6 @@ const scopes = {
 			{ name: 'var( )', id: 'css-var', forColor: true },
 			{ name: 'pseudo classes', id: 'css-ps-class', forColor: true },
 			{ name: 'pseudo elements', id: 'css-ps-el', forColor: true },
-		],
-	},
-	c16: {
-		hex: '#fb94ff',
-		info: [{ name: 'function keyword', id: 'function-keyword', forColor: true }],
-	},
-	c18: {
-		hex: '#9effff',
-		info: [
-			{ name: '& (parent)', id: 'css-and', forColor: true },
-			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
 		],
 	},
 
@@ -105,13 +95,28 @@ const scopes = {
 			{ name: 'variable names', id: 'var-names', forColor: true },
 		],
 	},
-	c21: {
-		hex: '#a5ff90',
+
+	c14: {
+		hex: '#ff628c',
+		info: [{ name: 'constants', id: 'constants', forColor: true }],
+	},
+
+	c16: {
+		hex: '#fb94ff',
+		info: [{ name: 'function keyword', id: 'function-keyword', forColor: true }],
+	},
+
+	c18: {
+		hex: '#9effff',
 		info: [
-			{ name: 'strings', id: 'strings', forColor: true },
-			{ name: 'css properties', id: 'css properties', forColor: true },
-			{ name: '()', id: 'parentheses', forColor: true },
+			{ name: '& (parent)', id: 'css-and', forColor: true },
+			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
 		],
+	},
+
+	c20: {
+		hex: '#ffee80',
+		info: [{ name: 'CSS property values', id: 'css-props', forColor: true }],
 	},
 };
 
@@ -126,7 +131,7 @@ const others = {
 	},
 	comment: {
 		hex: '#0088ff',
-		info: [{ name: 'comment', id: 'comment' }],
+		info: [{ name: 'comment', id: 'comment', forColor: true }],
 	},
 };
 

@@ -14,7 +14,7 @@ function updateBubble(s) {
 	bubble.style.left = ((s.value - s.min) * 100) / (s.max - s.min) + '%';
 }
 
-sliderInputs.forEach(s => {
+document.querySelectorAll('.slider input').forEach(s => {
 	s.addEventListener('input', e => {
 		updateBubble(s);
 	});

@@ -47,8 +47,11 @@
          cursor pointer
          transition transform 200ms ease
          height 20px
-         &:hover
+         &:not(.disable):hover
             background var(--hover)
+         &.disable
+            cursor not-allowed
+            filter grayscale(100%)
 
 
 // HSL sliders ----------------

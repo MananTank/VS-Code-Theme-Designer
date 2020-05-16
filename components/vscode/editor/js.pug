@@ -11,7 +11,7 @@
       .c19.target-dots .
       .c4.target-var-props querySelector
       .c19 (
-      .c21 '.counter'
+      .c21.target-strings '.counter'
       .c19 )
       .c19.target-dots ;
 
@@ -25,6 +25,9 @@
       +space
       .c14.target-constants 0
       .c19.target-dots ;
+
+
+
 
    // empty line
    .line
@@ -71,7 +74,7 @@
       .c19.target-dots .
       .c4.target-var-props addEventListener
       .c19 (
-      .c21 'click'
+      .c21.target-strings 'click'
       .c19.target-dots ,
       .c21 &nbsp;()&nbsp;
       .c4.target-arrow =>
@@ -80,7 +83,7 @@
 
    // // Count from 1 to 10.
    .line
-      .comment &nbsp;&nbsp;// count from 1 to 10.
+      .comment.target-comment &nbsp;&nbsp;// count from 1 to 10.
 
    // if (count < 10) {
    .line
@@ -95,7 +98,7 @@
       .c19.target-curly &nbsp;{
 
    // count += 1
-   .line.current-line
+   .line.current-line.target-current-line
       +tab
       +tab
       .c19.target-var-names count
@@ -105,15 +108,20 @@
       .cursor.target-cursor
 
    // render()
-   .line
+   .line.target-selected-text
       +tab
       +tab
       .c4.target-function-name render
       .c19 ()
-      .c19.target-dots ;
-   .line
+      .c19.target-dots.last-char ;
+
+   .line.target-selected-text
       +tab
-      .c19.target-curly }
+      .c19.target-curly.before-curve }
+      .curve &nbsp;
+
 
    .line
       .c19.target-curly })
+
+

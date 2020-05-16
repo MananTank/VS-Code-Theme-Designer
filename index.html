@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <div class="container">
       <div class="vscode">
-        <div class="title-bar target-title-bar">
+        <div class="title-bar target-title-bar target-primary-font">
           <div class="title">Project X - VSCODE</div>
           <div class="options">
                     <svg class="vscode-icon option" viewBox="0 0 256 256">
@@ -55,7 +55,7 @@
             <div class="option">Help</div>
           </div>
         </div>
-        <div class="activity-bar target-activity-bar">
+        <div class="activity-bar target-activity-bar target-activity-bar-icon">
                   <svg class="active" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="m8.5 0h9l4.5 4.5v12.1l-1.3 1.4h-4.7v4.6l-1.4 1.4h-12.1l-1.5-1.4v-15.1l1.5-1.5h4.5v-4.5zm7.5 1.5v4.5h4.5v10.5h-12v-15zm3.9 3-2.4-2.4v2.4zm-12.9 3v9.1l1.5 1.4h6v4.5h-12v-15z"></path>
                   </svg>
@@ -74,7 +74,7 @@
           <div class="badge target-badges">12</div>
         </div>
         <div class="tabs">
-          <div class="tab active target-active-tab">JavaScript</div>
+          <div class="tab active target-active-tab target-primary-font">JavaScript</div>
           <div class="tab target-inactive-tabs target-secondary-font">HTML</div>
           <div class="tab target-inactive-tabs target-secondary-font">CSS</div>
           <div class="tab target-inactive-tabs"></div>
@@ -120,7 +120,7 @@
               <div class="c19 target-dots">.</div>
               <div class="c4 target-var-props">querySelector</div>
               <div class="c19">(</div>
-              <div class="c21">'.counter'</div>
+              <div class="c21 target-strings">'.counter'</div>
               <div class="c19">)</div>
               <div class="c19 target-dots">;</div>
             </div>
@@ -180,7 +180,7 @@
               <div class="c19 target-dots">.</div>
               <div class="c4 target-var-props">addEventListener</div>
               <div class="c19">(</div>
-              <div class="c21">'click'</div>
+              <div class="c21 target-strings">'click'</div>
               <div class="c19 target-dots">,</div>
               <div class="c21">&nbsp;()&nbsp;</div>
               <div class="c4 target-arrow">=></div>
@@ -189,7 +189,7 @@
             </div>
             <!-- // Count from 1 to 10.-->
             <div class="line">
-              <div class="comment">&nbsp;&nbsp;// count from 1 to 10.</div>
+              <div class="comment target-comment">&nbsp;&nbsp;// count from 1 to 10.</div>
             </div>
             <!-- if (count < 10) {-->
             <div class="line">
@@ -204,7 +204,7 @@
               <div class="c19 target-curly">&nbsp;{</div>
             </div>
             <!-- count += 1-->
-            <div class="line current-line">
+            <div class="line current-line target-current-line">
                       <div class="space">&nbsp;&nbsp;</div>
                       <div class="space">&nbsp;&nbsp;</div>
               <div class="c19 target-var-names">count</div>
@@ -214,16 +214,17 @@
               <div class="cursor target-cursor"></div>
             </div>
             <!-- render()-->
-            <div class="line">
+            <div class="line target-selected-text">
                       <div class="space">&nbsp;&nbsp;</div>
                       <div class="space">&nbsp;&nbsp;</div>
               <div class="c4 target-function-name">render</div>
               <div class="c19">()</div>
-              <div class="c19 target-dots">;</div>
+              <div class="c19 target-dots last-char">;</div>
             </div>
-            <div class="line">
+            <div class="line target-selected-text">
                       <div class="space">&nbsp;&nbsp;</div>
-              <div class="c19 target-curly">}</div>
+              <div class="c19 target-curly before-curve">}</div>
+              <div class="curve">&nbsp;</div>
             </div>
             <div class="line">
               <div class="c19 target-curly">})</div>

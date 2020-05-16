@@ -14,8 +14,7 @@
     display flex
     font-size 12px
     padding: 0.1em;
-    & *::selection
-      background var(--selected)
+    user-select: none
     +on-sm()
       font-size 9px
 
@@ -25,6 +24,35 @@
     & > *
       border 1px solid transparent
       transition all 200ms ease
+    &.target-selected-text
+      padding-bottom 0
+      padding-top 0
+      padding-left 0
+      & > *
+        background var(--selected)
+
+      .last-char
+        border-top-right-radius: 3px
+        border-bottom-right-radius: 3px
+        padding-right 3px
+      .before-curve
+        border-bottom-right-radius: 3px
+        padding-right 3px
+      .curve
+        background var(--selected)
+        position relative
+        border none
+        &:before
+          content ' '
+          position absolute
+          width 100%
+          height 100%
+          top 0
+          left 0
+          border-top-left-radius: 3px
+          background var(--c9)
+
+
 
 
 

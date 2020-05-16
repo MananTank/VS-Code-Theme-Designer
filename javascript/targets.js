@@ -1,6 +1,6 @@
 function updateTargets() {
-	// remove old targets
-	targets.innerHTML = '';
+	// remove old selectionInfo
+	selectionInfo.innerHTML = '';
 
 	// create Ps for each entry in info
 	selected.pallete[selected.key].info.forEach(info => {
@@ -8,11 +8,10 @@ function updateTargets() {
 		const p = document.createElement('p');
 		p.textContent = info.name;
 
-		// find its targets
+		// find its selectionInfo
 		const targetNodes = document.querySelectorAll('.target-' + info.id);
-		console.log(targetNodes);
 
-		// if it has targets
+		// if it has selectionInfo
 		if (targetNodes.length) {
 			p.addEventListener('mouseover', e => {
 				targetNodes.forEach(target => {
@@ -25,9 +24,8 @@ function updateTargets() {
 					const hex = RGBToHex(rgb);
 					const [h, s, l] = hexToHSL(hex);
 					const col = `hsl(${h}deg, ${s}%, ${l}%)`;
-					const lighter = `hsl(${h}deg, ${s}%, ${l + 30}%)`;
-					const darker = `hsl(${h}deg, ${s}%, ${l - 30}%)`;
-					console.log('hex is', hex, h, s, l);
+					const lighter = `hsl(${h}deg, ${s}%, ${l + 20}%)`;
+					const darker = `hsl(${h}deg, ${s}%, ${l - 20}%)`;
 
 					if (info.forColor) {
 						// target.style.textShadow = `0 0 0.5em ${col}`;
@@ -61,12 +59,11 @@ function updateTargets() {
 			});
 		}
 
-		// if it does not have targets, disable it
+		// if it does not have selectionInfo, disable it
 		else {
-			p.style.opacity = 0.2;
-			p.classList.add('no-targets');
+			p.classList.add('disable');
 		}
 
-		targets.appendChild(p);
+		selectionInfo.appendChild(p);
 	});
 }

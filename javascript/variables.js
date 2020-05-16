@@ -32,11 +32,8 @@ const selected = {
 };
 
 const selection = document.querySelector('.selection');
-const targets = document.querySelector('.selection .info');
+const selectionInfo = document.querySelector('.selection .info');
 const hexInput = document.querySelector('.selection input[type="text"]');
-
-// all hsl slider inputs
-const sliderInputs = document.querySelectorAll('.slider input');
 
 function updateHexInput() {
 	hexInput.value = selected.color.getHEX();
