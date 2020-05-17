@@ -1,7 +1,7 @@
 // app state
 const selected = {
-	pallete: layout,
-	key: 'c10',
+	pallete: null,
+	key: null,
 	color: {
 		node: null,
 
@@ -42,13 +42,13 @@ function updateHexInput() {
 function dottify(color = selected.color.getHEX(), colorDiv = selected.color.node) {
 	if (getLightness(color) > 90) {
 		const [h, s, l] = hexToHSL(color);
-		colorDiv.style.border = `1px dotted ${darker(30, { h, s, l })}`;
+		colorDiv.style.border = `1px solid ${darker(30, { h, s, l })}`;
 	}
 }
 
 // when a new color is selected by clicking on the color itself
 function updateSelectionVariables() {
-	const isLight = selected.color.l > 80;
+	const isLight = selected.color.l > 50;
 
 	const props = {
 		h: selected.color.h + 'deg',

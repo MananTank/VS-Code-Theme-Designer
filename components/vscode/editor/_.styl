@@ -3,6 +3,12 @@
   background-color var(--c9)
   font-family: 'Fira Code', monospace;
   padding 5px 0
+
+  .page
+    display none
+    &.show
+      display block
+
   &.dim .line > *
     filter grayscale(100%)
     opacity 0.2
@@ -24,6 +30,9 @@
     & > *
       border 1px solid transparent
       transition all 200ms ease
+    .no-border
+      border none
+      border-top 2px solid transparent
     &.target-selected-text
       padding-bottom 0
       padding-top 0
@@ -51,7 +60,6 @@
           left 0
           border-top-left-radius: 3px
           background var(--c9)
-
 
 
 

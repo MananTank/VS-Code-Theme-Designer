@@ -4,10 +4,12 @@ makePallete(layout, '.layout');
 makePallete(others, '.others');
 
 // set default selected
+const firstKey = Object.keys(layout)[0];
+selected.pallete = layout;
+selected.key = firstKey;
 selected.color.node = document.querySelector('.color');
 selected.color.node.classList.add('active');
-selected.color.setHEX(layout['c10'].hex);
-
+selected.color.setHEX(layout[firstKey].hex);
 updateSelectionVariables();
 updateHexInput();
-updateTargets(layout['c10'].info);
+updateTargets(layout[firstKey].info);

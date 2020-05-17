@@ -248,6 +248,12 @@ body {
   font-family: 'Fira Code', monospace;
   padding: 5px 0;
 }
+.vscode .editor .page {
+  display: none;
+}
+.vscode .editor .page.show {
+  display: block;
+}
 .vscode .editor.dim .line > * {
   filter: grayscale(100%);
   opacity: 0.2;
@@ -272,6 +278,10 @@ body {
 .vscode .editor .line > * {
   border: 1px solid transparent;
   transition: all 200ms ease;
+}
+.vscode .editor .line .no-border {
+  border: none;
+  border-top: 2px solid transparent;
 }
 .vscode .editor .line.target-selected-text {
   padding-bottom: 0;
@@ -452,7 +462,7 @@ body {
 }
 .vscode .status-bar {
   grid-area: status;
-  background-color: var(--c10);
+  background-color: var(--c27);
   border-top: 1px solid var(--c2);
 }
 .vscode .tabs {
@@ -463,7 +473,7 @@ body {
   padding: 1em 1.8em;
   border-right: 1px solid var(--c10);
   border-bottom: 1px solid var(--c10);
-  background-color: var(--c9);
+  background-color: var(--c26);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
@@ -527,4 +537,7 @@ body {
 }
 .vscode .title-bar .options .option {
   margin-left: 1em;
+}
+[class*='target-'] {
+  transition: background 300ms ease;
 }

@@ -3,9 +3,13 @@ const layout = {
 		hex: '#193549',
 		info: [
 			{ name: 'editor', id: 'editor' },
-			{ name: 'inactive tabs', id: 'inactive-tabs' },
 			{ name: 'side bar group', id: 'side-bar-group' },
 		],
+	},
+
+	c26: {
+		hex: '#193549',
+		info: [{ name: 'inactive tabs', id: 'inactive-tabs' }],
 	},
 
 	c10: {
@@ -13,8 +17,12 @@ const layout = {
 		info: [
 			{ name: 'title bar', id: 'title-bar' },
 			{ name: 'side bar', id: 'side-bar' },
-			{ name: 'status bar', id: 'status-bar' },
 		],
+	},
+
+	c27: {
+		hex: '#15232d',
+		info: [{ name: 'status bar', id: 'status-bar' }],
 	},
 	c1: {
 		hex: '#122738',
@@ -47,88 +55,90 @@ const scopes = {
 	c7: {
 		hex: '#ff9d00',
 		info: [
-			{ name: 'conditions', id: 'if', forColor: true },
-			{ name: 'operators', id: 'operators', forColor: true },
-			{ name: 'import export', id: 'import', forColor: true },
-			{ name: 'css units', id: 'css-units', forColor: true },
-			{ name: '!important', id: 'important', forColor: true },
+			{ name: 'conditions', id: 'if', forColor: true, pages: ['.js'] },
+			{ name: 'operators', id: 'operators', forColor: true, pages: ['.js'] },
+			{ name: 'import export', id: 'import', forColor: true, pages: ['.react'] },
+			{ name: 'css units', id: 'css-units', forColor: true, pages: ['.css'] },
+			{ name: '!important', id: 'important', forColor: true, pages: ['.css', '.stylus'] },
+			{ name: 'media', id: 'media', forColor: true, pages: ['.css', '.stylus'] },
 		],
 	},
 
 	c4: {
 		hex: '#ffc600',
 		info: [
-			{ name: '=>', id: 'arrow', forColor: true },
-			{ name: 'function name', id: 'function-name', forColor: true },
+			{ name: '=>', id: 'arrow', forColor: true, pages: ['.js'] },
+			{ name: 'function name', id: 'function-name', forColor: true, pages: ['.js'] },
 			{ name: 'badges', id: 'badges' },
-			{ name: 'cursor', id: 'cursor', forColor: true },
-			{ name: 'const', id: 'const', forColor: true },
-			{ name: 'let', id: 'let', forColor: true },
-			{ name: 'mixins', id: 'mixins', forColor: true },
-			{ name: 'variable properties', id: 'var-props', forColor: true },
+			{ name: 'cursor', id: 'cursor', forColor: true, pages: ['.js'] },
+			{ name: 'const', id: 'const', forColor: true, pages: ['.js'] },
+			{ name: 'let', id: 'let', forColor: true, pages: ['.js'] },
+			{ name: 'mixins', id: 'mixins', forColor: true, pages: ['.stylus'] },
+			{ name: 'variable properties', id: 'var-props', forColor: true, pages: ['.js'] },
 		],
 	},
 
 	c20: {
 		hex: '#ffee80',
 		info: [
-			{ name: 'CSS property values', id: 'css-props', forColor: true },
-			{ name: '()', id: 'parentheses', forColor: true },
+			{ name: 'CSS values', id: 'css-values', forColor: true, pages: ['.css'] },
+			{ name: 'breakpoint width', id: 'css-brw', forColor: true, pages: ['.css'] },
+			{ name: '()', id: 'parentheses', forColor: true, pages: ['.js'] },
 		],
 	},
 
 	c21: {
 		hex: '#a5ff90',
 		info: [
-			{ name: 'strings', id: 'strings', forColor: true },
-			{ name: 'css properties', id: 'css properties', forColor: true },
+			{ name: 'strings', id: 'strings', forColor: true, pages: ['.js'] },
+			{ name: 'css properties', id: 'css-props', forColor: true, pages: ['.css'] },
 		],
 	},
 
 	c15: {
 		hex: '#3ad900',
 		info: [
-			{ name: 'template strings', id: 'template-strings', forColor: true },
-			{ name: 'class names', id: 'css-class', forColor: true },
-			{ name: 'var( )', id: 'css-var', forColor: true },
-			{ name: 'pseudo classes', id: 'css-ps-class', forColor: true },
-			{ name: 'pseudo elements', id: 'css-ps-el', forColor: true },
+			{ name: 'template strings', id: 'template-strings', forColor: true, pages: ['.js'] },
+			{ name: 'class names', id: 'css-class', forColor: true, pages: ['.css', '.stylus'] },
+			{ name: 'var( )', id: 'css-var', forColor: true, pages: ['.css'] },
 		],
 	},
 
 	c19: {
 		hex: '#e1efff',
 		info: [
-			{ name: '{ }', id: 'curly', forColor: true },
-			{ name: ': . , ;', id: 'dots', forColor: true },
+			{ name: '{ }', id: 'curly', forColor: true, pages: ['.js', '.react'] },
+			{ name: ': . , ;', id: 'dots', forColor: true, pages: ['.js', '.css', '.stylus', '.react'] },
+			{ name: 'pseudo', id: 'css-ps', forColor: true, pages: ['.css', '.stylus'] },
 		],
 	},
 
 	c25: {
-		hex: '#47EDFF',
-		info: [{ name: 'object', id: 'object', forColor: true }],
+		hex: '#e1efff',
+		info: [{ name: 'object', id: 'object', forColor: true, pages: ['.js'] }],
 	},
 
 	c24: {
 		hex: '#e1efff',
-		info: [{ name: 'variable names', id: 'var-names', forColor: true }],
+		info: [{ name: 'variable names', id: 'var-names', forColor: true, pages: ['.js'] }],
 	},
 
 	c14: {
 		hex: '#ff628c',
-		info: [{ name: 'constants', id: 'constants', forColor: true }],
+		info: [{ name: 'constants', id: 'constants', forColor: true, pages: ['.js'] }],
 	},
 
 	c16: {
 		hex: '#fb94ff',
-		info: [{ name: 'function keyword', id: 'function-keyword', forColor: true }],
+		info: [{ name: 'function keyword', id: 'function-keyword', forColor: true, pages: ['.js'] }],
 	},
 
 	c18: {
 		hex: '#9effff',
 		info: [
-			{ name: '& (parent)', id: 'css-and', forColor: true },
-			{ name: 'stylus variables', id: 'stylus-variables', forColor: true },
+			{ name: '& (parent)', id: 'css-and', forColor: true, pages: ['.stylus'] },
+			{ name: 'stylus variables', id: 'stylus-variables', forColor: true, pages: ['.stylus'] },
+			{ name: 'css variables', id: 'css-var-name', forColor: true, pages: ['.css', '.stylus'] },
 		],
 	},
 };
@@ -144,7 +154,7 @@ const others = {
 	},
 	comment: {
 		hex: '#0088ff',
-		info: [{ name: 'comment', id: 'comment', forColor: true }],
+		info: [{ name: 'comment', id: 'comment', forColor: true, pages: ['.js', '.stylus'] }],
 	},
 };
 
@@ -248,8 +258,8 @@ function makeTheme() {
       "editorGroup.border": "${layout.c1.hex}",
       "editorGroup.dropBackground": "${layout.c1.hex}99",
       // editorGroupHeader
-      "editorGroupHeader.noTabsBackground": "${layout.c9.hex}",
-      "editorGroupHeader.tabsBackground": "${layout.c9.hex}",
+      "editorGroupHeader.noTabsBackground": "${layout.c26.hex}",
+      "editorGroupHeader.tabsBackground": "${layout.c26.hex}",
       "editorGroupHeader.tabsBorder": "${layout.c10.hex}",
       // editorHoverWidget
       "editorHoverWidget.background": "${layout.c10.hex}",
@@ -368,25 +378,25 @@ function makeTheme() {
       "sideBarSectionHeader.foreground": "${layout.c8.hex}",
       "sideBarTitle.foreground": "${layout.c8.hex}",
       // statusBar
-      "statusBar.background": "${layout.c10.hex}",
+      "statusBar.background": "${layout.c27.hex}",
       "statusBar.border": "${layout.c2.hex}",
       "statusBar.debuggingBackground": "${layout.c10.hex}",
       "statusBar.debuggingBorder": "${scopes.c4.hex}",
       "statusBar.debuggingForeground": "${scopes.c4.hex}",
       "statusBar.foreground": "${layout.c8.hex}",
-      "statusBar.noFolderBackground": "${layout.c10.hex}",
+      "statusBar.noFolderBackground": "${layout.c27.hex}",
       "statusBar.noFolderBorder": "${layout.c2.hex}",
       "statusBar.noFolderForeground": "${layout.c8.hex}",
       "statusBarItem.activeBackground": "${others.comment.hex}",
       "statusBarItem.hoverBackground": "${layout.c2.hex}",
-      "statusBarItem.prominentBackground": "${layout.c10.hex}",
+      "statusBarItem.prominentBackground": "${layout.c27.hex}",
       "statusBarItem.prominentHoverBackground": "${layout.c2.hex}",
       // tab
       "tab.activeBackground": "${layout.c1.hex}",
       "tab.activeForeground": "${layout.c3.hex}",
       "tab.border": "${layout.c10.hex}",
       "tab.activeBorder": "${scopes.c4.hex}",
-      "tab.inactiveBackground": "${layout.c9.hex}",
+      "tab.inactiveBackground": "${layout.c26.hex}",
       "tab.inactiveForeground": "${layout.c8.hex}",
       "tab.unfocusedActiveForeground": "${layout.c8.hex}",
       "tab.unfocusedInactiveForeground": "${layout.c8.hex}",
@@ -435,6 +445,8 @@ function makeTheme() {
       "widget.shadow": "${fixed.c5}26"
     },
     "tokenColors": [
+
+
       {
         "name": "Comment",
         "scope": ["comment", "punctuation.definition.comment"],
@@ -592,6 +604,14 @@ function makeTheme() {
         "scope": "entity.other.attribute-name.id.css",
         "settings": {
           "foreground": "${scopes.c4.hex}"
+        }
+      },
+
+      {
+        "name": "[CSS] - psudeo class",
+        "scope": "entity.other.attribute-name.pseudo-class.css",
+        "settings": {
+          "foreground": "${scopes.c19.hex}"
         }
       },
       {
