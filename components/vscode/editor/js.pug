@@ -86,7 +86,7 @@
       .comment.target-comment &nbsp;&nbsp;// count from 1 to 10.
 
    // if (count < 10) {
-   .line
+   +current-line
       +tab
       .c7.target-if if
       +space
@@ -98,14 +98,14 @@
       .c19.target-curly &nbsp;{
 
    // count += 1
-   .line.current-line.target-current-line
+   .line
       +tab
       +tab
       .c24.target-var-names count
       .c7.target-operators &nbsp;+=&nbsp;
       .c14.target-constants 1
       .c19.target-dots ;
-      .cursor.target-cursor
+
 
    // render()
    .line.target-selected-text

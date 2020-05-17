@@ -445,6 +445,7 @@ body {
 }
 .vscode .side-bar .content .file {
   padding: 0.5em 0 0.5em 2em;
+  cursor: pointer;
 }
 .vscode .side-bar .content .file.active {
   background-color: var(--c2);

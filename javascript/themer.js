@@ -3,7 +3,7 @@ const layout = {
 		hex: '#193549',
 		info: [
 			{ name: 'editor', id: 'editor' },
-			{ name: 'side bar group', id: 'side-bar-group' },
+			{ name: 'groups', id: 'side-bar-group' },
 		],
 	},
 
@@ -28,8 +28,8 @@ const layout = {
 		hex: '#122738',
 		info: [
 			{ name: 'activity bar', id: 'activity-bar' },
-			{ name: 'line number gutter', id: 'line-gutter' },
-			{ name: 'terminal', id: 'terminal' },
+			{ name: 'gutter', id: 'line-gutter' },
+			{ name: 'panel', id: 'terminal' },
 			{ name: 'active tab', id: 'active-tab' },
 		],
 	},
@@ -61,6 +61,7 @@ const scopes = {
 			{ name: 'css units', id: 'css-units', forColor: true, pages: ['.css'] },
 			{ name: '!important', id: 'important', forColor: true, pages: ['.css', '.stylus'] },
 			{ name: 'media', id: 'media', forColor: true, pages: ['.css', '.stylus'] },
+			{ name: 'html attribute', id: 'html-atr', forColor: true, pages: ['.html'] },
 		],
 	},
 
@@ -92,6 +93,7 @@ const scopes = {
 		info: [
 			{ name: 'strings', id: 'strings', forColor: true, pages: ['.js'] },
 			{ name: 'css properties', id: 'css-props', forColor: true, pages: ['.css'] },
+			{ name: 'html attr values', id: 'html-atr-value', forColor: true, pages: ['.css'] },
 		],
 	},
 
@@ -110,6 +112,7 @@ const scopes = {
 			{ name: '{ }', id: 'curly', forColor: true, pages: ['.js', '.react'] },
 			{ name: ': . , ;', id: 'dots', forColor: true, pages: ['.js', '.css', '.stylus', '.react'] },
 			{ name: 'pseudo', id: 'css-ps', forColor: true, pages: ['.css', '.stylus'] },
+			{ name: 'html-text', id: 'html-text', forColor: true, pages: ['.html'] },
 		],
 	},
 

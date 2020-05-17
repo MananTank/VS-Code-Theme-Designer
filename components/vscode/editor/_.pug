@@ -4,6 +4,23 @@ mixin space
 mixin tab
    .space &nbsp;&nbsp;
 
+mixin tabs(x)
+   - let i = 0
+   while i++ < x
+      .space &nbsp;&nbsp;
+
+mixin double-tab
+   .space &nbsp;&nbsp;&nbsp;&nbsp;
+
+mixin empty-line
+   .line
+      +space
+
+mixin current-line
+   .line.current-line.target-current-line
+      block
+      .cursor.target-cursor
+
 
 .editor.target-editor
    include js

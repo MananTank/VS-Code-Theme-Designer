@@ -1,3 +1,116 @@
+mixin para(x)
+   .c19.target-dots= x
+
+mixin tag-o(name)
+   +para('<')
+   .target-div.c18= name
+
+mixin tag-c(name)
+   +para('</')
+   .target-div.c18= name
+   +para('>')
+
+mixin tag(name, value, end, selfClosing)
+   +tag-o(name)
+   block
+   if selfClosing
+      +para('/')
+   +para('>')
+   if value
+      +space
+      +text(value)
+      +space
+   if end
+      +tag-c(name)
+
+
+mixin atr(name, value)
+   +space
+   .c7.target-html-atr= name
+   .c19.target-dots =
+   .c21.target-html-atr-value= `"${value}"`
+
+mixin text(name)
+   .c19.target-html-text= name
+
+//-----------------------------------------------
+
 .html.page
+   //- <div class="container" style="max-width: 900px;">
    .line
-      div this is html
+      +tag('div')
+         +atr('class', 'container')
+         +atr('style', 'max-width: 900px;')
+
+   +empty-line
+
+   //- <h1 id="app">Codetheme X</h1>
+   .line
+      +tabs(2)
+      +tag('h1', 'codetheme X', true)
+         +atr('id', 'app-name')
+
+   //- <p>by</p>
+   .line
+      +tabs(2)
+      +tag('p', 'by', true)
+
+   //- <a href="twitter.com/expresso_js"> Manan Tank </a>
+   .line.current-line
+      +tabs(2)
+      +tag('a', 'Manan Tank', true)
+         +atr('href', 'twitter.com/expresso_js')
+      .cursor &nbsp;
+
+   +empty-line
+
+   //- <ul class="app-info">
+   .line
+      +tabs(2)
+      +tag('ul')
+         +atr('class', 'app-info')
+
+   //- <li>v1.6</li>
+   .line
+      +tabs(4)
+      +tag('li', 'v1.6', true)
+
+
+   //- <li>Last updated on: May, 2020</li>
+   .line.target-selected-text
+      +tabs(4)
+      +tag('li', 'Last updated on: May, 2020', true)
+      .space.last-char
+
+
+   //- </ul>
+   .line.target-selected-text
+      +tabs(2)
+      +tag-c('ul')
+      .space.before-curve
+      .curve &nbsp;
+
+   +empty-line
+
+   //- <svg>..</svg>
+   .line
+      +tabs(2)
+      +tag('svg', '..', true)
+
+   //- <input onclick="handleClick()" />
+   .line
+      +tabs(2)
+      +tag('input', false, false, true)
+         +atr('onclick', 'handleClick()')
+
+   //- <img src="./wow.png" />
+   .line
+      +tabs(2)
+      +tag('img', false, false, true)
+         +atr('src', './wow.png')
+
+   +empty-line
+
+   //- </div>
+   .line
+      +tag-c('div')
