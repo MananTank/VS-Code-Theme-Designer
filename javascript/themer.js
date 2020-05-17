@@ -1,3 +1,40 @@
+function tagify(name, color, s = 'structure') {
+	const sStart = `meta.tag.${s}.${name}.start.html`;
+	const sEnd = `meta.tag.${s}.${name}.end.html`;
+	const tag = 'entity.name.tag.html';
+	const pBegin = 'punctuation.definition.tag.begin.html';
+	const pEnd = 'punctuation.definition.tag.end.html';
+
+	const scopes = `${sStart} ${tag}, ${sEnd} ${tag}, ${sStart} ${pBegin}, ${sStart} ${pEnd}, ${sEnd} ${pBegin}, ${sEnd} ${pEnd}`;
+
+	return ` {
+    "name": "[HTML] - <${name}> </${name}>",
+    "scope": "${scopes}",
+    "settings": {
+      "fontStyle": "italic",
+      "foreground": "${color}"
+    }
+  }`;
+}
+
+function tagifySelfClosing(name, color, st = 'object') {
+	const s = `meta.tag.${st}.${name}.void.html`;
+	const tag = 'entity.name.tag.html';
+	const pBegin = 'punctuation.definition.tag.begin.html';
+	const pEnd = 'punctuation.definition.tag.end.html';
+
+	const scopes = `${s} ${tag}, ${s} ${tag}, ${s} ${pBegin}, ${s} ${pEnd}`;
+
+	return ` {
+    "name": "[HTML] - <${name}> </${name}>",
+    "scope": "${scopes}",
+    "settings": {
+      "fontStyle": "italic",
+      "foreground": "${color}"
+    }
+  }`;
+}
+
 const layout = {
 	c9: {
 		hex: '#193549',
@@ -143,6 +180,42 @@ const scopes = {
 			{ name: 'stylus variables', id: 'stylus-variables', forColor: true, pages: ['.stylus'] },
 			{ name: 'css variables', id: 'css-var-name', forColor: true, pages: ['.css', '.stylus'] },
 		],
+	},
+
+	c28: {
+		hex: '#4DFFE7',
+		info: [
+			{ name: '<div>', id: 'div', forColor: true, pages: ['.html'] },
+			{ name: '<xxx>', id: 'other-tag', forColor: true, pages: ['.html'] },
+		],
+	},
+	c29: {
+		hex: '#4DFFB2',
+		info: [{ name: '<h1> - <h6>', id: 'h1', forColor: true, pages: ['.html'] }],
+	},
+	c30: {
+		hex: '#FA70FF',
+		info: [{ name: '<a>', id: 'a', forColor: true, pages: ['.html'] }],
+	},
+	c31: {
+		hex: '#F3FF70',
+		info: [{ name: '<ul> <ol> <li>', id: 'ul', forColor: true, pages: ['.html'] }],
+	},
+	c32: {
+		hex: '#BC8FFF',
+		info: [{ name: '<svg>', id: 'svg', forColor: true, pages: ['.html'] }],
+	},
+	c33: {
+		hex: '#8FD8FF',
+		info: [
+			{ name: '<input>', id: 'input', forColor: true, pages: ['.html'] },
+			{ name: '<img>', id: 'img', forColor: true, pages: ['.html'] },
+		],
+	},
+
+	c34: {
+		hex: '#FF9361',
+		info: [{ name: '<p>', id: 'p', forColor: true, pages: ['.html'] }],
 	},
 };
 
@@ -684,6 +757,30 @@ function makeTheme() {
           "foreground": "${scopes.c4.hex}"
         }
       },
+
+      ${tagify('div', scopes.c28.hex)},
+
+      ${tagify('h1', scopes.c29.hex)},
+      ${tagify('h2', scopes.c29.hex)},
+      ${tagify('h3', scopes.c29.hex)},
+      ${tagify('h4', scopes.c29.hex)},
+      ${tagify('h5', scopes.c29.hex)},
+      ${tagify('h6', scopes.c29.hex)},
+
+      ${tagify('a', scopes.c30.hex, 'inline')},
+
+      ${tagify('ul', scopes.c31.hex)},
+      ${tagify('ol', scopes.c31.hex)},
+      ${tagify('li', scopes.c31.hex)},
+
+      ${tagify('svg', scopes.c32.hex)},
+
+      ${tagifySelfClosing('input', scopes.c33.hex, 'structure')},
+      ${tagifySelfClosing('img', scopes.c33.hex, 'object')},
+
+      ${tagify('p', scopes.c34.hex)},
+
+
       {
         "name": "[HTML] - Script Tag",
         "scope": "meta.tag.metadata.script.html entity.name.tag.html",
@@ -957,13 +1054,6 @@ function makeTheme() {
         }
       },
       {
-        "name": "[PHP] - Entity",
-        "scope": "source.php entity",
-        "settings": {
-          "foreground": "${scopes.c18.hex}"
-        }
-      },
-      {
         "name": "[JAVASCRIPT] - Variable other Properties",
         "scope" : "variable.other.property.js",
         "settings": {
@@ -975,35 +1065,6 @@ function makeTheme() {
         "scope" : "variable.other.object.js",
         "settings": {
           "foreground": "${scopes.c25.hex}"
-        }
-      },
-
-      {
-        "name": "[PHP] - Variables",
-        "scope": "variable.other.php",
-        "settings": {
-          "foreground": "${scopes.c4.hex}"
-        }
-      },
-      {
-        "name": "[C#] - Annotations",
-        "scope": "storage.type.cs",
-        "settings": {
-          "foreground": "${scopes.c18.hex}"
-        }
-      },
-      {
-        "name": "[C#] - Properties",
-        "scope": "entity.name.variable.property.cs",
-        "settings": {
-          "foreground": "${scopes.c18.hex}"
-        }
-      },
-      {
-        "name": "[C#] - Storage modifiers",
-        "scope": "storage.modifier.cs",
-        "settings": {
-          "foreground": "${fixed.c22}"
         }
       },
       {
@@ -1022,27 +1083,6 @@ function makeTheme() {
         ],
         "settings": {
           "fontStyle": "italic"
-        }
-      },
-      {
-        "name": "[CSHARP] - Modifiers and keyword types",
-        "scope": "storage.modifier.cs, keyword.type.cs",
-        "settings": {
-          "foreground": "${scopes.c16.hex}"
-        }
-      },
-      {
-        "name": "[CSHARP] - Storage types",
-        "scope": "storage.type.cs",
-        "settings": {
-          "foreground": "${fixed.c22}"
-        }
-      },
-      {
-        "name": "[CSHARP] - Namespaces, parameters, field variables, properties",
-        "scope": "entity.name.type.namespace.cs, entity.name.variable.parameter.cs, entity.name.variable.field.cs, entity.name.variable.property.cs",
-        "settings": {
-          "foreground": "${scopes.c19.hex}"
         }
       }
     ]

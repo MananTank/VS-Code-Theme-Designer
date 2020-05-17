@@ -1,21 +1,34 @@
+-
+   function getClass(tag) {
+      switch(tag) {
+         case 'div': return 'c28'; break;
+         case 'h1': return 'c29'; break;
+         case 'a': return 'c30'; break;
+         case 'ul': return 'c31'; break;
+         case 'li': return 'c31'; break;
+         case 'svg': return 'c32'; break;
+         case 'input': return 'c33'; break;
+         case 'img': return 'c33'; break;
+         case 'p': return 'c34'; break;
+      }
+   }
+
+
 mixin para(x)
    .c19.target-dots= x
 
 mixin tag-o(name)
-   +para('<')
-   .target-div.c18= name
+   div(class=`target-${name}` class=getClass(name))= `<${name}`
 
 mixin tag-c(name)
-   +para('</')
-   .target-div.c18= name
-   +para('>')
+   div(class=`target-${name}` class=getClass(name))= `</${name}>`
 
 mixin tag(name, value, end, selfClosing)
    +tag-o(name)
    block
    if selfClosing
-      +para('/')
-   +para('>')
+      div(class=getClass(name)) /
+   div(class=getClass(name)) >
    if value
       +space
       +text(value)
@@ -47,7 +60,7 @@ mixin text(name)
    //- <h1 id="app">Codetheme X</h1>
    .line
       +tabs(2)
-      +tag('h1', 'codetheme X', true)
+      +tag('h1', 'CodeTheme X', true)
          +atr('id', 'app-name')
 
    //- <p>by</p>
@@ -58,7 +71,7 @@ mixin text(name)
    //- <a href="twitter.com/expresso_js"> Manan Tank </a>
    .line.current-line
       +tabs(2)
-      +tag('a', 'Manan Tank', true)
+      +tag('a', 'Twitter', true)
          +atr('href', 'twitter.com/expresso_js')
       .cursor &nbsp;
 
