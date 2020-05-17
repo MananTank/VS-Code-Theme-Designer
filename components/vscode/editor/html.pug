@@ -23,12 +23,13 @@ mixin tag-o(name)
 mixin tag-c(name)
    div(class=`target-${name}` class=getClass(name))= `</${name}>`
 
+
 mixin tag(name, value, end, selfClosing)
    +tag-o(name)
    block
    if selfClosing
-      div(class=getClass(name)) /
-   div(class=getClass(name)) >
+      div(class=`target-${name}` class=getClass(name) ) /
+   div(class=`target-${name}` class=getClass(name) ) >
    if value
       +space
       +text(value)
@@ -101,7 +102,8 @@ mixin text(name)
       +tabs(2)
       +tag-c('ul')
       .space.before-curve
-      .curve &nbsp;
+      .curve.target-editor &nbsp;
+
 
    +empty-line
 

@@ -22,47 +22,64 @@ function updateTargets() {
 		if (hasTarget && (hasTargetIndependantOfPage || targetOnCurrentPage)) {
 			p.addEventListener('mouseover', e => {
 				targetNodes.forEach(target => {
-					let rgb;
-					if (info.forColor) {
-						rgb = getComputedStyle(target).getPropertyValue('color');
-					} else {
-						rgb = getComputedStyle(target).getPropertyValue('background');
-					}
+					//
+					let rgb = getComputedStyle(target).getPropertyValue('background');
 					const hex = RGBToHex(rgb);
-					const [h, s, l] = hexToHSL(hex);
-					const col = `hsl(${h}deg, ${s}%, ${l}%)`;
+					const h = hexToHSL(hex)[0];
 					const invert = `hsl(${h + 150}deg, ${100}%, ${50}%)`;
-					const darker = `hsl(${h}deg, ${s}%, ${l - 20}%)`;
+
+					if (info.forBefore) {
+						target.style.setProperty('--hide', invert);
+					}
+
+					if (info.forBorder) {
+						target.style.borderBottom = `1px solid ${invert}`;
+						target.style.borderRight = `1px solid ${invert}`;
+					}
+
+					if (info.forChildren) {
+						target.querySelectorAll('div').forEach(c => {
+							c.style.background = invert;
+						});
+					}
 
 					if (info.forColor) {
-						// target.style.textShadow = `0 0 0.5em ${col}`;
-						target.style.fontWeight = 'bold';
 						target.style.filter = 'none';
 						target.style.opacity = 1;
 						document.querySelector('.editor').classList.add('dim');
-					} else {
-						// target.style.color = 'transparent';
-						// target.style.background = `repeating-linear-gradient(45deg, ${invert} 0 1px, ${hex} 0 5px)`;
+					}
+					if (info.forBg) {
 						target.style.background = invert;
 					}
-					// target.style.animation = 'highlight 200ms linear infinite';
 				});
 			});
 
 			p.addEventListener('mouseout', e => {
 				targetNodes.forEach(target => {
+					if (info.forBefore) {
+						target.style.setProperty(`--hide`, null);
+					}
+
+					if (info.forBorder) {
+						target.style.borderBottom = null;
+						target.style.borderRight = null;
+					}
+
+					if (info.forChildren) {
+						target.querySelectorAll('div').forEach(c => {
+							c.style.background = null;
+						});
+					}
+
 					if (info.forColor) {
-						// target.style.textShadow = null;
-						target.style.fontWeight = null;
 						target.style.filter = null;
 						target.style.opacity = null;
 						document.querySelector('.editor').classList.remove('dim');
-					} else {
-						// target.style.color = null;
+					}
+
+					if (info.forBg) {
 						target.style.background = null;
 					}
-					// target.style.backgroundColor = null;
-					// target.style.animation = null;
 				});
 			});
 		}

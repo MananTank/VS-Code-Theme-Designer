@@ -39,51 +39,52 @@ const layout = {
 	c9: {
 		hex: '#193549',
 		info: [
-			{ name: 'editor', id: 'editor' },
-			{ name: 'groups', id: 'side-bar-group' },
+			{ name: 'editor', id: 'editor', forBefore: true, forBg: true },
+			{ name: 'groups', id: 'side-bar-group', forBg: true },
 		],
 	},
 
 	c26: {
 		hex: '#193549',
-		info: [{ name: 'inactive tabs', id: 'inactive-tabs' }],
+		info: [{ name: 'inactive tabs', id: 'inactive-tabs', forBg: true }],
 	},
 
 	c10: {
 		hex: '#15232d',
 		info: [
-			{ name: 'title bar', id: 'title-bar' },
-			{ name: 'side bar', id: 'side-bar' },
+			{ name: 'title bar', id: 'title-bar', forBg: true },
+			{ name: 'side bar', id: 'side-bar', forBg: true },
+			{ name: 'tab border', id: 'tab-border', forBorder: true },
 		],
 	},
 
 	c27: {
 		hex: '#15232d',
-		info: [{ name: 'status bar', id: 'status-bar' }],
+		info: [{ name: 'status bar', id: 'status-bar', forBg: true }],
 	},
 	c1: {
 		hex: '#122738',
 		info: [
-			{ name: 'activity bar', id: 'activity-bar' },
-			{ name: 'gutter', id: 'line-gutter' },
-			{ name: 'panel', id: 'terminal' },
-			{ name: 'active tab', id: 'active-tab' },
+			{ name: 'activity bar', id: 'activity-bar', forBg: true },
+			{ name: 'gutter', id: 'line-gutter', forBg: true },
+			{ name: 'panel', id: 'terminal', forBg: true },
+			{ name: 'active tab', id: 'active-tab', forBg: true },
 		],
 	},
 
 	c2: {
 		hex: '#0d3a58',
-		info: [{ name: 'active file', id: 'active-file' }],
+		info: [{ name: 'active file', id: 'active-file', forBg: true }],
 	},
 	c8: {
 		hex: '#aaaaaa',
-		info: [{ name: 'secondary font color', id: 'secondary-font' }],
+		info: [{ name: 'secondary font color', id: 'secondary-font', forBg: true }],
 	},
 	c3: {
 		hex: '#ffffff',
 		info: [
-			{ name: 'primary font color', id: 'primary-font', forShine: true },
-			{ name: 'activity bar icons', id: 'activity-bar-icon', forShine: true },
+			{ name: 'primary font color', id: 'primary-font', forBg: true },
+			{ name: 'activity bar icons', id: 'activity-bar-icon', forBg: true },
 		],
 	},
 };
@@ -226,7 +227,7 @@ const others = {
 	},
 	selected: {
 		hex: '#0050A4',
-		info: [{ name: 'selected text', id: 'selected-text' }],
+		info: [{ name: 'selected text', id: 'selected-text', forChildren: true }],
 	},
 	comment: {
 		hex: '#0088ff',
