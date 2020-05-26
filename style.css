@@ -317,6 +317,9 @@ body {
   background: var(--hide);
   transition: background 300ms ease;
 }
+.vscode .dull {
+  opacity: 0.3;
+}
 .vscode .c1 {
   color: var(--c1);
 }

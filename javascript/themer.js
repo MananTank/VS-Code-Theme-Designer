@@ -12,6 +12,7 @@ const stringEnd = 'punctuation.definition.string.end.html';
 function tagify(name, color, s = 'structure', target = name) {
 	const sStart = `meta.tag.${s}.${target}.start.html`;
 	const sEnd = `meta.tag.${s}.${target}.end.html`;
+	const colorTransparent = `${color}50`;
 
 	const atrValue = atrName => `
     {
@@ -35,7 +36,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - </${name}> end ",
     "scope": "${sEnd} ${tag}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -43,7 +44,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - punctuations <> for tag ${name} start",
     "scope": "${sStart} ${pBegin}, ${sStart} ${pEnd}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -51,7 +52,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - punctuations <> for tag ${name} end  ",
     "scope": "${sEnd} ${pBegin}, ${sEnd} ${pEnd}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -67,7 +68,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - <${name} quotes  >",
     "scope": "${sStart} ${stringBegin}, ${sStart} ${stringEnd}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -75,7 +76,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - <${name} atribute name",
     "scope": "${sStart} entity.other.attribute-name.html",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -83,7 +84,7 @@ function tagify(name, color, s = 'structure', target = name) {
     "name": "[HTML] - <${name} = >",
     "scope": "${sStart} ${ps}, ${sEnd} ${ps}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -95,13 +96,14 @@ function tagify(name, color, s = 'structure', target = name) {
 
 function tagifySelfClosing(name, color, st = 'object') {
 	const s = `meta.tag.${st}.${name}.void.html`;
+	const colorTransparent = `${color}50`;
 
 	const atrValue = atrName => `
     {
       "name": "[HTML] - <${name} ${atrName}='string' />",
       "scope": "${s} meta.attribute.${atrName}.html ${dq}, ${s} meta.attribute.${atrName}.html ${sq}",
       "settings": {
-        "foreground": "${color}66"
+        "foreground": "${colorTransparent}"
       }
     }
   `;
@@ -119,7 +121,7 @@ function tagifySelfClosing(name, color, st = 'object') {
     "name": "[HTML] - </${name}> ",
     "scope": "${s} ${pBegin}, ${s} ${pEnd}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -135,21 +137,21 @@ function tagifySelfClosing(name, color, st = 'object') {
     "name": "[HTML] - <${name} quotes  >",
     "scope": "${s} ${stringBegin}, ${s} ${stringEnd}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
   {
     "name": "[HTML] - <${name} quotes in string  >",
     "scope": "${s} entity.other.attribute-name.html",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
   {
     "name": "[HTML] - <${name} = >",
     "scope": "${s} ${ps}",
     "settings": {
-      "foreground": "${color}66"
+      "foreground": "${colorTransparent}"
     }
   },
 
@@ -408,14 +410,17 @@ const scopes = {
 	},
 	c29: {
 		hex: '#4DFFB2',
-		info: [{ name: '<h1> - <h6>', id: 'h1', forColor: true, pages: ['.html'] }],
+		info: [
+			{ name: '<h1> - <h6>', id: 'h1', forColor: true, pages: ['.html'] },
+			{ name: '<p>', id: 'p', forColor: true, pages: ['.html'] },
+		],
 	},
 	c30: {
 		hex: '#FA70FF',
 		info: [{ name: '<a>', id: 'a', forColor: true, pages: ['.html'] }],
 	},
 	c31: {
-		hex: '#F3FF70',
+		hex: '#FF8B1F',
 		info: [
 			{ name: '<ul> <ol> <li>', id: 'ul', forColor: true, pages: ['.html'] },
 		],
@@ -432,9 +437,9 @@ const scopes = {
 		],
 	},
 
-	c34: {
-		hex: '#FF9361',
-		info: [{ name: '<p>', id: 'p', forColor: true, pages: ['.html'] }],
+	c35: {
+		hex: '#EFFF61',
+		info: [{ name: 'text', id: 'html-text', forColor: true, pages: ['.html'] }],
 	},
 };
 
@@ -627,12 +632,29 @@ function makeTheme() {
 },
 
 {
-  "name": "[HTML] - SVG d, viewbox",
-  "scope": "meta.attribute.d.html ${dq}, meta.attribute.d.html ${sq}, meta.attribute.unrecognized.viewbox.html ${dq}, meta.attribute.unrecognized.viewbox.html ${sq}",
+  "name": "[HTML] - SVG d, viewBox, stroke, ",
+  "scope": "meta.attribute.d.html ${dq}, meta.attribute.d.html ${sq}, meta.attribute.unrecognized.viewbox.html ${dq}, meta.attribute.unrecognized.viewBox.html ${sq}, meta.attribute.stroke.html ${sq}",
   "settings": {
     "foreground": "${colorDull}"
   }
 },
+
+{
+  "name": "[HTML] - svg attributes ",
+  "scope": "meta.element.structure.svg.html ${sq}, meta.element.structure.svg.html ${dq}",
+  "settings": {
+    "foreground": "${colorDull}"
+  }
+},
+
+{
+  "name": "[HTML] - svg class names string",
+  "scope": "meta.element.structure.svg.html meta.attribute.class.html ${sq}, meta.element.structure.svg.html meta.attribute.class.html ${dq}",
+  "settings": {
+    "foreground": "${scopes.c32.hex}"
+  }
+},
+
 {
   "name": "[HTML] - string begin and end quotes ",
   "scope": "${stringBegin}, ${stringEnd}",
@@ -652,11 +674,20 @@ function makeTheme() {
 {
   "name": "[HTML] - tag ends ",
   "scope":
-  "${tagEnd('metadata.script')},
-  ${tagEnd('structure.label')},
-  ${tagEnd('inline.span')}",
+  "${tagEnd('metadata.script')}, ${tagEnd('structure.label')}, ${tagEnd(
+		'inline.span'
+	)}",
   "settings": {
     "foreground": "${colorDull}"
+  }
+},
+
+
+{
+  "name": "[HTML] - text in html ",
+  "scope": "text.html.derivative",
+  "settings": {
+    "foreground": "${scopes.c35.hex}"
   }
 },
 
@@ -703,11 +734,13 @@ ${tagify('li', scopes.c31.hex)},
 ${tagify('svg', scopes.c32.hex, 'structure')},
 ${tagify('path', scopes.c32.hex)},
 ${tagify('g', scopes.c32.hex, 'structure', 'svg.g')},
+${tagify('path', scopes.c32.hex, 'object', 'svg.path')},
+${tagify('symbol', scopes.c32.hex, 'object', 'svg.symbol')},
 
 ${tagifySelfClosing('input', scopes.c33.hex, 'structure')},
 ${tagifySelfClosing('img', scopes.c33.hex, 'object')},
 
-${tagify('p', scopes.c34.hex)},
+${tagify('p', scopes.c29.hex)},
 
 
 {

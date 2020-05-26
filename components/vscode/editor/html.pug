@@ -9,7 +9,7 @@
          case 'svg': return 'c32'; break;
          case 'input': return 'c33'; break;
          case 'img': return 'c33'; break;
-         case 'p': return 'c34'; break;
+         case 'p': return 'c29'; break;
       }
    }
 
@@ -18,18 +18,27 @@ mixin para(x)
    .c19.target-dots= x
 
 mixin tag-o(name)
-   div(class=`target-${name}` class=getClass(name))= `<${name}`
+   - let c1 = `target-${name}`
+   - let c2 = getClass(name)
+   div.dull(class=[c1, c2]) <
+   div(class=[c1, c2])= name
 
 mixin tag-c(name)
-   div(class=`target-${name}` class=getClass(name))= `</${name}>`
+   - let c1 = `target-${name}`
+   - let c2 = getClass(name)
+   div.dull(class=[c1, c2])= `</`
+   div(class=[c1, c2])= name
+   div.dull(class=[c1, c2]) >
 
 
 mixin tag(name, value, end, selfClosing)
+   - let c1 = `target-${name}`
+   - let c2 = getClass(name)
    +tag-o(name)
    block
    if selfClosing
-      div(class=`target-${name}` class=getClass(name) ) /
-   div(class=`target-${name}` class=getClass(name) ) >
+      div(class=[c1,c2]) /
+   div.dull(class=[c1,c2]) >
    if value
       +space
       +text(value)
@@ -38,14 +47,19 @@ mixin tag(name, value, end, selfClosing)
       +tag-c(name)
 
 
-mixin atr(name, value)
+
+mixin atr(name, value, tag, valueDull = false)
+   - let c2 = getClass(tag)
    +space
-   .c7.target-html-atr= name
-   .c19.target-dots =
-   .c21.target-html-atr-value= `"${value}"`
+   div(class=c2).dull= name
+   div(class=c2).dull =
+   div(class=c2).dull "
+   div(class=c2 class= valueDull ? 'dull' : '' )= value
+   div(class=c2).dull "
+
 
 mixin text(name)
-   .c19.target-html-text= name
+   .c35.target-html-text= name
 
 //-----------------------------------------------
 
@@ -53,8 +67,8 @@ mixin text(name)
    //- <div class="container" style="max-width: 900px;">
    .line
       +tag('div')
-         +atr('class', 'container')
-         +atr('style', 'max-width: 900px;')
+         +atr('class', 'container', 'div')
+         +atr('style', 'max-width: 900px;', 'div', true)
 
    +empty-line
 
@@ -62,7 +76,7 @@ mixin text(name)
    .line
       +tabs(2)
       +tag('h1', 'CodeTheme X', true)
-         +atr('id', 'app-name')
+         +atr('id', 'app-name', 'h1')
 
    //- <p>by</p>
    .line
@@ -70,11 +84,11 @@ mixin text(name)
       +tag('p', 'by', true)
 
    //- <a href="twitter.com/expresso_js"> Manan Tank </a>
-   .line.current-line
+   .line
       +tabs(2)
       +tag('a', 'Twitter', true)
-         +atr('href', 'twitter.com/expresso_js')
-      .cursor &nbsp;
+         +atr('href', 'twitter.com/_MananTank', 'a', true)
+
 
    +empty-line
 
@@ -82,7 +96,7 @@ mixin text(name)
    .line
       +tabs(2)
       +tag('ul')
-         +atr('class', 'app-info')
+         +atr('class', 'app-info', 'ul')
 
    //- <li>v1.6</li>
    .line
@@ -91,14 +105,14 @@ mixin text(name)
 
 
    //- <li>Last updated on: May, 2020</li>
-   .line.target-selected-text
+   .line
       +tabs(4)
       +tag('li', 'Last updated on: May, 2020', true)
       .space.last-char
 
 
    //- </ul>
-   .line.target-selected-text
+   .line
       +tabs(2)
       +tag-c('ul')
       .space.before-curve
@@ -116,13 +130,13 @@ mixin text(name)
    .line
       +tabs(2)
       +tag('input', false, false, true)
-         +atr('onclick', 'handleClick()')
+         +atr('onclick', 'handleClick()', 'input')
 
    //- <img src="./wow.png" />
    .line
       +tabs(2)
       +tag('img', false, false, true)
-         +atr('src', './wow.png')
+         +atr('src', './wow.png', 'img', true)
 
    +empty-line
 
