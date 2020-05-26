@@ -109,8 +109,13 @@ function RGBToHex(rgb) {
 	return '#' + r + g + b;
 }
 
-function darker(x, color = selected.color) {
-	return `hsl(${color.h}deg, ${color.s + 10}%, ${Number(color.l) - x}%)`;
+function darker(amount, color = selected.color) {
+	return `hsl(${color.h}deg, ${color.s + 10}%, ${Number(color.l) - amount}%)`;
+}
+
+function darkerHex(amount, color) {
+	const [h, s, l] = hexToHSL(color);
+	return HSLToHex(h + amount / 3, s, l - amount);
 }
 
 function lighter(x, color = selected.color) {

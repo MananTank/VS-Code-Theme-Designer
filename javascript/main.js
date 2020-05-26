@@ -13,3 +13,4 @@ selected.color.setHEX(layout[firstKey].hex);
 updateSelectionVariables();
 updateHexInput();
 updateTargets(layout[firstKey].info);
+updateHSLSliders();
