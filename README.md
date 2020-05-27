@@ -5,4 +5,4 @@
 
 [Try it now !](https://manantank.github.io/vscode-theme-designer/)
 
-![/readme-images/js.jpg]
+!(/readme-images/js.jpg)
