@@ -1,8 +1,10 @@
 # VS Code Theme Designer
 ## Create your own VScode theme extension in seconds !
 
-( work in progress)
-
 [Try it now !](https://manantank.github.io/vscode-theme-designer/)
 
-!(/readme-images/js.jpg)
+![](/readme/js.jpg)
+
+
+> I am porting this project to react
+> This project is work in progress
